@@ -17,47 +17,67 @@ const Navbar = () => {
       route: "",
     },
     {
-      label: "about",
+      label: "recommend",
       route: "",
     },
     {
-      label: "contact",
+      label: "oversea",
+      route: "",
+    },
+    {
+      label: "master",
+      route: "",
+    },
+    {
+      label: "phd",
+      route: "",
+    },
+    {
+      label: "about",
       route: "",
     },
     {
       label: "partner",
       route: "",
     },
+    {
+      label: "contact",
+      route: "",
+    },
   ];
 
-  const changeTo = router.locale === "en" ? "zh" : "en";
+  const locale = router.locale;
+  const changeTo = locale === "en" ? "zh" : "en";
 
   return (
     <div className="w-full">
-      <nav className="container relative flex flex-wrap items-center justify-between p-8 mx-auto lg:justify-between xl:px-0">
+      <nav className="container relative flex flex-wrap items-center justify-between p-8 mx-auto xl:justify-between xl:px-0">
         {/* Logo  */}
         <Disclosure>
           {({ open }) => (
             <>
-              <div className="flex flex-wrap items-center justify-between w-full lg:w-auto">
+              <div className="flex flex-wrap items-center justify-between w-full xl:w-auto">
                 <Link href="/">
-                  <span className="flex items-center space-x-2 text-2xl font-medium text-indigo-500 dark:text-gray-100">
-                    <span>
-                      <Image
-                        src="/img/gow-logo.jpg"
-                        alt="N"
-                        width="50"
-                        height="50"
-                        className="w-12"
-                      />
-                    </span>
-                    <span>{t("logo")}</span>
+                  <span
+                    style={{ height: "70px" }}
+                    className="flex items-center space-x-2 text-2xl font-medium text-indigo-500 dark:text-gray-100"
+                  >
+                    <Image
+                      src={
+                        locale === "en"
+                          ? "/logo/logo-eng.png"
+                          : "/logo/logo-zh.png"
+                      }
+                      alt="N"
+                      width="220"
+                      height="70"
+                    />
                   </span>
                 </Link>
 
                 <Disclosure.Button
                   aria-label="Toggle Menu"
-                  className="px-2 py-1 ml-auto text-gray-500 rounded-md lg:hidden hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none dark:text-gray-300 dark:focus:bg-trueGray-700"
+                  className="px-2 py-1 ml-auto text-gray-500 rounded-md xl:hidden hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none dark:text-gray-300 dark:focus:bg-trueGray-700"
                 >
                   <svg
                     className="w-6 h-6 fill-current"
@@ -80,23 +100,17 @@ const Navbar = () => {
                   </svg>
                 </Disclosure.Button>
 
-                <Disclosure.Panel className="flex flex-wrap w-full my-5 lg:hidden">
+                <Disclosure.Panel className="flex flex-wrap w-full my-5 xl:hidden">
                   <>
                     {navigation.map((item, index) => (
                       <Link
                         key={index}
                         href="/"
-                        className="w-full px-4 py-2 -ml-4 text-gray-500 rounded-md dark:text-gray-300 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 dark:focus:bg-gray-800 focus:outline-none"
+                        className="text-center w-full px-4 py-2 -ml-4 text-gray-500 rounded-md dark:text-gray-300 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 dark:focus:bg-gray-800 focus:outline-none"
                       >
                         {t(item.label)}
                       </Link>
                     ))}
-                    <Link
-                      href="/"
-                      className="w-full px-6 py-2 mt-3 text-center text-white bg-indigo-600 rounded-md lg:ml-5"
-                    >
-                      {t('start')}
-                    </Link>
                   </>
                 </Disclosure.Panel>
               </div>
@@ -105,13 +119,13 @@ const Navbar = () => {
         </Disclosure>
 
         {/* menu  */}
-        <div className="hidden text-center lg:flex lg:items-center">
-          <ul className="items-center justify-end flex-1 pt-6 list-none lg:pt-0 lg:flex">
+        <div className="hidden text-center xl:flex xl:items-center">
+          <ul className="items-center justify-end flex-1 pt-6 list-none xl:pt-0 xl:flex">
             {navigation.map((menu, index) => (
-              <li className="mr-3 nav__item" key={index}>
+              <li className="nav__item" key={index}>
                 <Link
                   href="/"
-                  className="inline-block px-4 py-2 text-lg font-normal text-gray-800 no-underline rounded-md dark:text-gray-200 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none dark:focus:bg-gray-800"
+                  className="font-bold inline-block px-4 py-2 text-lg font-normal text-gray-800 no-underline rounded-md dark:text-gray-200 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none dark:focus:bg-gray-800"
                 >
                   {t(menu.label)}
                 </Link>
@@ -120,13 +134,13 @@ const Navbar = () => {
           </ul>
         </div>
 
-        <div className="hidden mr-3 space-x-4 lg:flex nav__item">
-          <Link
+        <div className="hidden mr-3 space-x-4 xl:flex nav__item">
+          {/* <Link
             href="/"
             className="px-6 py-2 text-white bg-indigo-600 rounded-md md:ml-5"
           >
             Get Started
-          </Link>
+          </Link> */}
           <Link href="/" locale={changeTo}>
             <IconButton className="text-gray-500 dark:text-gray-300">
               <TranslateIcon />

@@ -1,14 +1,18 @@
 {
   "logo": "Gow Education",
-  "home": "home",
-  "about": "about us",
-  "contact": "contact us",
-  "partner": "Partners",
+  "home": "Home",
+  "oversea": "Study Overseas",
+  "master": "Masterclasses",
+  "phd": "PhD-Ready",
+  "about": "About",
+  "contact": "Contact",
+  "recommend": "Testimonials",
+  "partner": "Partner",
   "slogan1": "To be your",
   "slogan2": "best yourself",
   "start": "Get Started",
   "subtitle": "Best learning, best career, best life.",
-  "discover": "discover out lessons",
+  "discover": "discover our lessons",
   "Trusted-by": "Trusted by",
   "Trusted-by2": "international students worldwide"
 }

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Container from "./container";
-import heroImg from "../public/img/hero.png";
+import heroImg from "../public/illustration/Formula-rafiki.svg";
 import USYDLogo from "../public/img/university-logo/usyd.svg";
 import MelbouleLogo from "../public/img/university-logo/university-of-melbourne.svg";
 import UNSWLogo from "../public/img/university-logo/unsw_0.png";
@@ -60,14 +60,13 @@ const Hero = () => {
         <div className="flex items-center justify-center w-full lg:w-1/2">
           <div className="">
             <Image
-              style={{ transform: "scaleX(-1)" }}
+              // style={{ transform: "scaleX(-1)" }}
               src={heroImg}
-              width="300"
-              height="300"
+              width="600"
+              height="600"
               className={"object-cover"}
               alt="Hero Illustration"
               loading="eager"
-              placeholder="blur"
             />
           </div>
         </div>
