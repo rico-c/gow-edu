@@ -18,7 +18,7 @@ const Cta = () => {
             href="https://github.com/web3templates"
             target="_blank"
             rel="noopener"
-            className="inline-block py-3 mx-auto text-lg font-medium text-center text-indigo-600 bg-white rounded-md px-7 lg:px-10 lg:py-5 ">
+            className="inline-block py-3 mx-auto text-lg font-medium text-center text-blue-600 bg-white rounded-md px-7 lg:px-10 lg:py-5 ">
             Download for Free
           </a>
         </div>
