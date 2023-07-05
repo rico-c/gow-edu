@@ -10,7 +10,6 @@ import IconButton from "@mui/material/IconButton";
 const Navbar = () => {
   const { t } = useTranslation("common");
   const router = useRouter();
-  // const navigation = ["Product", "Features", "Pricing", "Company", "Blog"];
   const navigation = [
     {
       label: "home",

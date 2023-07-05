@@ -1,15 +1,26 @@
 import Image from "next/image";
 import Container from "./container";
-import heroImg from "../public/illustration/Formula-rafiki.svg";
+import heroImg from "../public/illustration/college project-bro.svg";
 import USYDLogo from "../public/img/university-logo/usyd.svg";
 import MelbouleLogo from "../public/img/university-logo/university-of-melbourne.svg";
 import UNSWLogo from "../public/img/university-logo/unsw_0.png";
 import MonashLogo from "../public/img/university-logo/monash-logo.svg";
 import AdeledeLogo from "../public/img/university-logo/adelede.webp";
+import { Carousel } from "antd";
+import { Button, Input } from "antd";
+import { RightOutlined } from "@ant-design/icons";
 import { useTranslation } from "next-i18next";
+import Link from "next/link";
+
+const labelStyle = {
+  backgroundColor: "rgba(0, 0, 0, 0.4)",
+  padding: "0.5rem 3rem",
+  transform: "translate(-50%, -50%)",
+};
 
 const Hero = () => {
   const { t } = useTranslation("common");
+
   return (
     <>
       <Container className="flex flex-wrap ">
@@ -60,7 +71,6 @@ const Hero = () => {
         <div className="flex items-center justify-center w-full lg:w-1/2">
           <div className="">
             <Image
-              // style={{ transform: "scaleX(-1)" }}
               src={heroImg}
               width="600"
               height="600"
@@ -74,8 +84,8 @@ const Hero = () => {
       <Container>
         <div className="flex flex-col justify-center">
           <div className="text-xl text-center text-gray-700 dark:text-white">
-            {t('Trusted-by')} <span className="text-blue-600">20000+</span>{" "}
-            {t('Trusted-by2')}
+            {t("Trusted-by")} <span className="text-blue-600">20000+</span>{" "}
+            {t("Trusted-by2")}
           </div>
 
           <div className="flex flex-wrap justify-center gap-5 mt-10 items-center md:justify-around">
@@ -132,6 +142,120 @@ const Hero = () => {
           </div>
         </div>
       </Container>
+      <Carousel autoplay className="w-full">
+        <div className="relative">
+          <div
+            className="absolute top-1/2 left-1/2 text-xl text-white md:text-4xl lg:text-8xl"
+            style={labelStyle}
+          >
+            {t("learn")}
+          </div>
+          <img
+            src={"/banner/home_banner1.png"}
+            fill="true"
+            alt="Hero Illustration"
+          />
+        </div>
+        <div className="relative">
+          <div
+            className="absolute top-1/2 left-1/2 text-xl text-white md:text-4xl lg:text-8xl"
+            style={labelStyle}
+          >
+            {t("grow")}
+          </div>
+          <img
+            src={"/banner/home_banner2.png"}
+            fill="true"
+            alt="Hero Illustration"
+          />
+        </div>
+        <div className="relative">
+          <div
+            className="absolute top-1/2 left-1/2 text-xl text-white md:text-4xl lg:text-8xl"
+            style={labelStyle}
+          >
+            {t("excel")}
+          </div>
+          <img
+            src={"/banner/home_banner3.png"}
+            fill="true"
+            alt="Hero Illustration"
+          />
+        </div>
+      </Carousel>
+      <div>
+        <div className="flex justify-center pt-10">{t("more-about-gow")}</div>
+        <div className="flex justify-center">
+          <div className="lg:w-1/2 py-5 flex justify-between">
+            <Button type="link">
+              <Link
+                href="/about"
+                className="sm:text-sm lg:text-xl flex items-center gap-2"
+                style={{ color: "#f05622" }}
+              >
+                {t("be-presenter")}
+                <RightOutlined />
+              </Link>
+            </Button>
+            <Button type="link">
+              <Link
+                href="/partner"
+                className="sm:text-sm lg:text-xl flex items-center gap-2"
+                style={{ color: "#f05622" }}
+              >
+                {t("be-partner")}
+                <RightOutlined />
+              </Link>
+            </Button>
+            <Button type="link">
+              <Link
+                href="/recommended"
+                className="sm:text-sm lg:text-xl flex items-center gap-2"
+                style={{ color: "#f05622" }}
+              >
+                {t("recommend")}
+                <RightOutlined />
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </div>
+
+      {/* 收集邮件订阅 */}
+      <div
+        className="w-full flex justify-center mt-10"
+        style={{ backgroundColor: "#0d7a98", height: "280px" }}
+      >
+        <div className="relative w-1/2 flex">
+          <div className="w-60">
+            <Image
+              className="absolute bottom-0 left-0 h-auto"
+              src={"/img/robert.png"}
+              width="220"
+              height="320"
+            />
+          </div>
+          <div className="text-white right-0 py-5">
+            <div className="text-2xl my-3.5">{t("email-subscription")}</div>
+            <div className="text-base">{t("email-subscription-desc")}</div>
+            <div className="text-base">{t("subscribtion-cancel")}</div>
+            <div className="py-7 flex gap-6">
+              <div>
+                <div>{t("name")}</div>
+                <Input />
+              </div>
+              <div>
+                <div>{t("email")}</div>
+                <Input />
+              </div>
+              <div>
+                <div>&nbsp;</div>
+                <Button className="bg-white">{t("subscribe")}</Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   );
 };

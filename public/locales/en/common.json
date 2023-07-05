@@ -1,6 +1,9 @@
 {
   "logo": "Gow Education",
   "home": "Home",
+  "learn": "Learn",
+  "grow": "Grow",
+  "excel": "Excel",
   "oversea": "Study Overseas",
   "master": "Masterclasses",
   "phd": "PhD-Ready",
@@ -14,5 +17,19 @@
   "subtitle": "Best learning, best career, best life.",
   "discover": "discover our lessons",
   "Trusted-by": "Trusted by",
-  "Trusted-by2": "international students worldwide"
+  "Trusted-by2": "international students worldwide",
+  "be-presenter": "Become a Workshop Presenter",
+  "be-partner": "Partner with us",
+  "more-about-gow": "Learn more about Gow Education ...",
+  "email-subscription": "Free access to Dr Robert’s weekly motivation and inspiration.",
+  "email-subscription-desc": "Receive an inspirational weekly email in your inbox every Monday morning.",
+  "subscribtion-cancel": "Start your week on a high note. Unsubscribe at any time.",
+  "name": "First Name:",
+  "email": "Email:",
+  "subscribe": "Get Access",
+  "slogan3": "Best Study … Best Career … Best Life!",
+  "value-desc": "Gow Education assists university students, graduates and early career professionals navigate your way to achieving your life goals.\n
+  We aim to help build your confidence and give you the skills, knowledge and practice to create your brilliant future. How do we do this? By assisting you choose the right University to attend, develop your study skills, refine English language skills, and provide career advice to help find your ideal job and career path. As your life coach, we will help you be the best you can be, and achieve what you want to achieve.\n
+  Our classes are taught by experienced University academics from leading world-class universities and business professionals. Our goal is for you to stay curious, become more courageous, build good study and work habits, and most of all, make the right choices. Let us join you on your journey to achieve your personal best - best study, best career, and best life!\n
+  Dr Robert"
 }
