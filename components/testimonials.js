@@ -2,9 +2,9 @@ import Image from "next/image";
 import React from "react";
 import Container from "./container";
 
-import userOneImg from "../public/img/user1.jpg";
-import userTwoImg from "../public/img/user2.jpg";
-import userThreeImg from "../public/img/user3.jpg";
+// import userOneImg from "../public/img/user1.jpg";
+// import userTwoImg from "../public/img/user2.jpg";
+// import userThreeImg from "../public/img/user3.jpg";
 
 const Testimonials  = () => {
   return (
@@ -17,11 +17,11 @@ const Testimonials  = () => {
               that hits some of your benefits from one of your popular customer.
             </p>
 
-            <Avatar
+            {/* <Avatar
               image={userOneImg}
               name="Sarah Steiner"
               title="VP Sales at Google"
-            />
+            /> */}
           </div>
         </div>
         <div className="">
@@ -31,11 +31,11 @@ const Testimonials  = () => {
               to keep it short and simple.
             </p>
 
-            <Avatar
+            {/* <Avatar
               image={userTwoImg}
               name="Dylan Ambrose"
               title="Lead marketer at Netflix"
-            />
+            /> */}
           </div>
         </div>
         <div className="">
@@ -45,11 +45,11 @@ const Testimonials  = () => {
               would use this for anything.
             </p>
 
-            <Avatar
+            {/* <Avatar
               image={userThreeImg}
               name="Gabrielle Winn"
               title="Co-founder of Acme Inc"
-            />
+            /> */}
           </div>
         </div>
       </div>

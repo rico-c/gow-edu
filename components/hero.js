@@ -84,8 +84,8 @@ const Hero = () => {
       <Container>
         <div className="flex flex-col justify-center">
           <div className="text-xl text-center text-gray-700 dark:text-white">
-            {t("Trusted-by")} <span className="text-blue-600">20000+</span>{" "}
-            {t("Trusted-by2")}
+            {t("trusted-by")} <span className="text-blue-600">20000+</span>{" "}
+            {t("trusted-by2")}
           </div>
 
           <div className="flex flex-wrap justify-center gap-5 mt-10 items-center md:justify-around">

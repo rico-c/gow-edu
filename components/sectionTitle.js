@@ -2,6 +2,7 @@ import React from "react";
 import Container from "./container";
 
 const SectionTitle = (props) => {
+  console.log(props.children);
   return (
     <Container
       className={`flex w-full flex-col mt-4 ${
@@ -20,8 +21,7 @@ const SectionTitle = (props) => {
       )}
 
       {props.children && (
-        <p className="max-w-7xl py-4 text-lg leading-normal text-gray-500 lg:text-xl xl:text-xl dark:text-gray-300">
-          {props.children}
+        <p className="text-left max-w-7xl py-4 text-lg leading-normal text-gray-900 lg:text-xl xl:text-xl dark:text-gray-300" dangerouslySetInnerHTML={{__html: props.children}}>
         </p>
       )}
     </Container>
