@@ -231,6 +231,7 @@ const Hero = () => {
             <Image
               className="absolute bottom-0 left-0 h-auto"
               src={"/img/robert.png"}
+              alt="x"
               width="220"
               height="320"
             />
