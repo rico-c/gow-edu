@@ -23,7 +23,7 @@ const Hero = () => {
 
   return (
     <>
-      <Container className="flex flex-wrap ">
+      {/* <Container className="flex flex-wrap ">
         <div className="flex items-center w-full lg:w-1/2">
           <div className="max-w-2xl mb-8">
             <h1 className="text-4xl font-bold leading-snug tracking-tight text-gray-800 lg:text-4xl lg:leading-tight xl:text-6xl xl:leading-tight dark:text-white">
@@ -141,7 +141,7 @@ const Hero = () => {
             </div>
           </div>
         </div>
-      </Container>
+      </Container> */}
       <Carousel autoplay className="w-full">
         <div className="relative">
           <div
@@ -186,8 +186,8 @@ const Hero = () => {
       <div>
         <div className="flex justify-center pt-10">{t("more-about-gow")}</div>
         <div className="flex justify-center">
-          <div className="lg:w-1/2 py-5 flex justify-between">
-            <Button type="link">
+          <div className="lg:w-1/2 py-5 md:flex justify-between">
+            <Button type="link" className="flex">
               <Link
                 href="/about"
                 className="sm:text-sm lg:text-xl flex items-center gap-2"
@@ -197,7 +197,7 @@ const Hero = () => {
                 <RightOutlined />
               </Link>
             </Button>
-            <Button type="link">
+            <Button type="link" className="flex">
               <Link
                 href="/partner"
                 className="sm:text-sm lg:text-xl flex items-center gap-2"
@@ -207,7 +207,7 @@ const Hero = () => {
                 <RightOutlined />
               </Link>
             </Button>
-            <Button type="link">
+            <Button type="link" className="flex">
               <Link
                 href="/recommended"
                 className="sm:text-sm lg:text-xl flex items-center gap-2"
@@ -223,11 +223,11 @@ const Hero = () => {
 
       {/* 收集邮件订阅 */}
       <div
-        className="w-full flex justify-center mt-10"
-        style={{ backgroundColor: "#0d7a98", height: "280px" }}
+        className="w-full flex justify-center mt-5 lg:mt-10 h-auto lg:h-72"
+        style={{ backgroundColor: "#0d7a98" }}
       >
-        <div className="relative w-1/2 flex">
-          <div className="w-60">
+        <div className="relative p-5 lg:p-0 lg:w-1/2 flex">
+          <div className="hidden lg:block lg:w-60">
             <Image
               className="absolute bottom-0 left-0 h-auto"
               src={"/img/robert.png"}
@@ -240,7 +240,7 @@ const Hero = () => {
             <div className="text-2xl my-3.5">{t("email-subscription")}</div>
             <div className="text-base">{t("email-subscription-desc")}</div>
             <div className="text-base">{t("subscribtion-cancel")}</div>
-            <div className="py-7 flex gap-6">
+            <div className="py-7 lg:flex gap-6">
               <div>
                 <div>{t("name")}</div>
                 <Input />
@@ -251,7 +251,7 @@ const Hero = () => {
               </div>
               <div>
                 <div>&nbsp;</div>
-                <Button className="bg-white">{t("subscribe")}</Button>
+                <Button className="bg-white w-full lg:w-auto">{t("subscribe")}</Button>
               </div>
             </div>
           </div>

@@ -145,7 +145,7 @@ const Navbar = () => {
               <TranslateIcon />
             </IconButton>
           </Link>
-          <ThemeChanger />
+          {/* <ThemeChanger /> */}
         </div>
       </nav>
     </div>

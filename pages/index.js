@@ -40,14 +40,14 @@ const Home = () => {
         <img className="" src={'/img/welcome.png'} fill="true" alt={'welcome'} />
       </div>
       <Feedback />
-      <Benefits data={benefitOne} />
-      <Benefits imgPos="right" data={benefitTwo} />
-      <Testimonials />
+      {/* <Benefits data={benefitOne} />
+      <Benefits imgPos="right" data={benefitTwo} /> */}
+      {/* <Testimonials />
       <SectionTitle pretitle="FAQ" title="Frequently Asked Questions">
         Answer your customers possible questions here, it will increase the
         conversion rate as well as support or chat requests.
-      </SectionTitle>
-      <Faq />
+      </SectionTitle> */}
+      {/* <Faq /> */}
       <Footer />
       <PopupWidget />
     </>
