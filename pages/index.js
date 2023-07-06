@@ -1,16 +1,12 @@
+import { useEffect } from "react";
 import Head from "next/head";
 import Hero from "../components/hero";
 import Navbar from "../components/navbar";
 import SectionTitle from "../components/sectionTitle";
 import Image from "next/image";
 import Feedback from "../components/feedback";
-import { benefitOne, benefitTwo } from "../components/data";
 import Video from "../components/video";
-import Benefits from "../components/benefits";
 import Footer from "../components/footer";
-import Testimonials from "../components/testimonials";
-import Cta from "../components/cta";
-import Faq from "../components/faq";
 import PopupWidget from "../components/popupWidget";
 import { useTranslation } from "next-i18next";
 
@@ -18,6 +14,17 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 const Home = () => {
   const { t } = useTranslation("common");
+
+  useEffect(() => {
+    (window).$crisp=[];
+    (window).CRISP_WEBSITE_ID="09c5c023-ef8b-4d40-b073-460bfe43be9f";
+    let d=document;
+    let s=d.createElement("script");
+    s.src="https://client.crisp.chat/l.js";
+    (s).async=1;
+    d.getElementsByTagName("head")[0].appendChild(s);
+  }, [])
+
   return (
     <>
       <Head>
@@ -49,7 +56,7 @@ const Home = () => {
       </SectionTitle> */}
       {/* <Faq /> */}
       <Footer />
-      <PopupWidget />
+      {/* <PopupWidget /> */}
     </>
   );
 }
