@@ -13,35 +13,35 @@ const Navbar = () => {
   const navigation = [
     {
       label: "home",
-      route: "",
+      route: "/",
     },
     {
       label: "recommend",
-      route: "",
+      route: "/testimonials",
     },
     {
       label: "oversea",
-      route: "",
+      route: "/studyoversea",
     },
     {
       label: "master",
-      route: "",
+      route: "/masterclass",
     },
     {
       label: "phd",
-      route: "",
+      route: "/phdready",
     },
     {
       label: "about",
-      route: "",
+      route: "/about",
     },
     {
       label: "partner",
-      route: "",
+      route: "/partner",
     },
     {
       label: "contact",
-      route: "",
+      route: "/contact",
     },
   ];
 
@@ -104,7 +104,7 @@ const Navbar = () => {
                     {navigation.map((item, index) => (
                       <Link
                         key={index}
-                        href="/"
+                        href={item.route}
                         className="text-center w-full px-4 py-2 -ml-4 text-gray-500 rounded-md dark:text-gray-300 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 dark:focus:bg-gray-800 focus:outline-none"
                       >
                         {t(item.label)}
@@ -123,7 +123,7 @@ const Navbar = () => {
             {navigation.map((menu, index) => (
               <li className="nav__item" key={index}>
                 <Link
-                  href="/"
+                  href={menu.route}
                   className="font-bold inline-block px-4 py-2 text-lg font-normal text-gray-800 no-underline rounded-md dark:text-gray-200 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none dark:focus:bg-gray-800"
                 >
                   {t(menu.label)}
@@ -134,13 +134,7 @@ const Navbar = () => {
         </div>
 
         <div className="hidden mr-3 space-x-4 xl:flex nav__item">
-          {/* <Link
-            href="/"
-            className="px-6 py-2 text-white bg-indigo-600 rounded-md md:ml-5"
-          >
-            Get Started
-          </Link> */}
-          <Link href="/" locale={changeTo}>
+          <Link href={{pathname: router.pathname}} locale={changeTo}>
             <IconButton className="text-gray-500 dark:text-gray-300">
               <TranslateIcon />
             </IconButton>

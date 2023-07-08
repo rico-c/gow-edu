@@ -8,35 +8,35 @@ import { useTranslation } from "next-i18next";
 const navigation = [
   {
     label: "home",
-    route: "",
+    route: "/",
   },
   {
     label: "recommend",
-    route: "",
+    route: "/testimonials",
   },
   {
     label: "oversea",
-    route: "",
+    route: "/studyoversea",
   },
   {
     label: "master",
-    route: "",
+    route: "/masterclass",
   },
   {
     label: "phd",
-    route: "",
+    route: "/phdready",
   },
   {
     label: "about",
-    route: "",
+    route: "/about",
   },
   {
     label: "partner",
-    route: "",
+    route: "/partner",
   },
   {
     label: "contact",
-    route: "",
+    route: "/contact",
   },
 ];
 
@@ -61,7 +61,7 @@ export default function Footer() {
           {navigation.map((item, index) => (
             <Link
               key={index}
-              href="/"
+              href={item.route}
               className="text-center w-full md:px-4 py-1 md:py-2 md:-ml-4 rounded-md block md:inline"
             >
               {t(item.label)}

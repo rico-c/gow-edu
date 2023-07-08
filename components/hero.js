@@ -237,6 +237,13 @@ const Hero = () => {
             />
           </div>
           <div className="text-white right-0 py-5">
+          <div className="block lg:hidden">
+            <img
+              className=""
+              src={"/img/home-asscimg.png"}
+              alt="x"
+            />
+          </div>
             <div className="text-2xl my-3.5">{t("email-subscription")}</div>
             <div className="text-base">{t("email-subscription-desc")}</div>
             <div className="text-base">{t("subscribtion-cancel")}</div>
@@ -251,7 +258,7 @@ const Hero = () => {
               </div>
               <div>
                 <div>&nbsp;</div>
-                <Button className="bg-white w-full lg:w-auto">{t("subscribe")}</Button>
+                <Button className="bg-white w-full lg:w-auto" style={{background: '#f05622', color: '#fff'}}>{t("subscribe")}</Button>
               </div>
             </div>
           </div>
