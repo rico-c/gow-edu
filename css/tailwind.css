@@ -8,3 +8,7 @@
     @apply dark:bg-trueGray-900;
   }
 }
+
+.main-color {
+  color: #f05622;
+}

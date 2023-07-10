@@ -1,6 +1,7 @@
 import Footer from "../components/footer";
 import Head from "next/head";
 import Navbar from "../components/navbar";
+import ContactForm from "../components/contact";
 import { useTranslation } from "next-i18next";
 
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
@@ -15,6 +16,7 @@ const Contact = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar />
+      <ContactForm />
       <Footer />
     </>
   );
