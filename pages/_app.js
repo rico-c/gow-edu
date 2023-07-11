@@ -1,11 +1,20 @@
 import { ThemeProvider } from "next-themes";
-import { appWithTranslation } from 'next-i18next'
+import { ConfigProvider } from 'antd';
+import { appWithTranslation } from "next-i18next";
 import "../css/tailwind.css";
 
 function MyApp({ Component, pageProps }) {
   return (
     <ThemeProvider attribute="class">
-      <Component {...pageProps} />
+      <ConfigProvider
+        theme={{
+          token: {
+            colorPrimary: "#117c9a",
+          },
+        }}
+      >
+        <Component {...pageProps} />
+      </ConfigProvider>
     </ThemeProvider>
   );
 }

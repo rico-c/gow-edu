@@ -1,16 +1,10 @@
 import Image from "next/image";
-import Container from "./container";
-import heroImg from "../public/illustration/college project-bro.svg";
-import USYDLogo from "../public/img/university-logo/usyd.svg";
-import MelbouleLogo from "../public/img/university-logo/university-of-melbourne.svg";
-import UNSWLogo from "../public/img/university-logo/unsw_0.png";
-import MonashLogo from "../public/img/university-logo/monash-logo.svg";
-import AdeledeLogo from "../public/img/university-logo/adelede.webp";
 import { Carousel } from "antd";
 import { Button, Input } from "antd";
 import { RightOutlined } from "@ant-design/icons";
 import { useTranslation } from "next-i18next";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 const labelStyle = {
   backgroundColor: "rgba(0, 0, 0, 0.4)",
@@ -20,6 +14,10 @@ const labelStyle = {
 
 const Hero = () => {
   const { t } = useTranslation("common");
+  const router = useRouter();
+  const locale = router.locale;
+
+  console.log(locale);
 
   return (
     <>
@@ -237,30 +235,45 @@ const Hero = () => {
             />
           </div>
           <div className="text-white right-0 py-5">
-          <div className="block lg:hidden">
-            <img
-              className=""
-              src={"/img/home-asscimg.png"}
-              alt="x"
-            />
-          </div>
-            <div className="text-2xl my-3.5">{t("email-subscription")}</div>
-            <div className="text-base">{t("email-subscription-desc")}</div>
-            <div className="text-base">{t("subscribtion-cancel")}</div>
-            <div className="py-7 lg:flex gap-6">
-              <div>
-                <div>{t("name")}</div>
-                <Input />
-              </div>
-              <div>
-                <div>{t("email")}</div>
-                <Input />
-              </div>
-              <div>
-                <div>&nbsp;</div>
-                <Button className="bg-white w-full lg:w-auto" style={{background: '#f05622', color: '#fff'}}>{t("subscribe")}</Button>
-              </div>
+            <div className="block lg:hidden">
+              <img className="" src={"/img/home-asscimg.png"} alt="x" />
             </div>
+            {locale === "en" && (
+              <>
+                <div className="text-2xl my-3.5">{t("email-subscription")}</div>
+                <div className="text-base">{t("email-subscription-desc")}</div>
+                <div className="text-base">{t("subscribtion-cancel")}</div>
+              </>
+            )}
+            {locale === "en" && (
+              <div className="py-7 lg:flex gap-6">
+                <div>
+                  <div>{t("name")}</div>
+                  <Input />
+                </div>
+                <div>
+                  <div>{t("email")}</div>
+                  <Input />
+                </div>
+                <div>
+                  <div>&nbsp;</div>
+                  <Button
+                    className="bg-white w-full lg:w-auto"
+                    style={{ background: "#f05622", color: "#fff" }}
+                  >
+                    {t("subscribe")}
+                  </Button>
+                </div>
+              </div>
+            )}
+            {locale === "zh" && (
+              <div className="py-7 gap-6 lg:pl-10 h-full">
+                <div className="font-bold text-2xl">扫码添加Robert教授微信</div>
+                <div className="h-full p-5 flex justify-center">
+                  <img className="h-1/2 lg:h-full" src={"/qr/wechat.jpeg"} />
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>

@@ -59,7 +59,7 @@ const Navbar = () => {
                 <Link href="/">
                   <span
                     style={{ height: "70px" }}
-                    className="flex items-center space-x-2 text-2xl font-medium text-indigo-500 dark:text-gray-100"
+                    className="flex items-center space-x-2 text-2xl font-medium text-cyan-700 dark:text-gray-100"
                   >
                     <Image
                       src={
@@ -76,7 +76,7 @@ const Navbar = () => {
 
                 <Disclosure.Button
                   aria-label="Toggle Menu"
-                  className="px-2 py-1 ml-auto text-gray-500 rounded-md xl:hidden hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none dark:text-gray-300 dark:focus:bg-trueGray-700"
+                  className="px-2 py-1 ml-auto text-gray-500 rounded-md xl:hidden hover:text-cyan-700 focus:text-cyan-700 focus:bg-indigo-100 focus:outline-none dark:text-gray-300 dark:focus:bg-trueGray-700"
                 >
                   <svg
                     className="w-6 h-6 fill-current"
@@ -105,7 +105,7 @@ const Navbar = () => {
                       <Link
                         key={index}
                         href={item.route}
-                        className="text-center w-full px-4 py-2 -ml-4 text-gray-500 rounded-md dark:text-gray-300 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 dark:focus:bg-gray-800 focus:outline-none"
+                        className="text-center w-full px-4 py-2 -ml-4 text-gray-500 rounded-md dark:text-gray-300 hover:text-cyan-700 focus:text-cyan-700 focus:bg-indigo-100 dark:focus:bg-gray-800 focus:outline-none"
                       >
                         {t(item.label)}
                       </Link>
@@ -124,7 +124,7 @@ const Navbar = () => {
               <li className="nav__item" key={index}>
                 <Link
                   href={menu.route}
-                  className="font-bold inline-block px-4 py-2 text-lg font-normal text-gray-800 no-underline rounded-md dark:text-gray-200 hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none dark:focus:bg-gray-800"
+                  className="font-bold inline-block px-4 py-2 text-lg font-normal text-gray-800 no-underline rounded-md dark:text-gray-200 hover:text-cyan-700 focus:text-cyan-700 focus:bg-indigo-100 focus:outline-none dark:focus:bg-gray-800"
                 >
                   {t(menu.label)}
                 </Link>
