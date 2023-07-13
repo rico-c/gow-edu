@@ -107,7 +107,7 @@ const Hero = () => {
 
       {/* 收集邮件订阅 */}
       <div
-        className="w-full flex justify-center mt-5 lg:mt-10 h-auto lg:h-72"
+        className="w-full flex justify-center mt-5 h-60 lg:mt-10 h-auto lg:h-72"
         style={{ backgroundColor: "#0d7a98" }}
       >
         <div className="relative p-5 lg:p-0 flex">
@@ -121,9 +121,9 @@ const Hero = () => {
             />
           </div>
           <div className="text-white right-0 py-5">
-            <div className="block lg:hidden">
+            {/* <div className="block lg:hidden">
               <img className="" src={"/img/home-asscimg.png"} alt="x" />
-            </div>
+            </div> */}
             {locale === "en" && (
               <>
                 <div className="text-2xl my-3.5">{t("email-subscription")}</div>
@@ -160,10 +160,10 @@ const Hero = () => {
               </Form>
             )}
             {locale === "zh" && (
-              <div className="py-7 gap-6 lg:pl-10 h-full">
-                <div className="font-bold text-2xl">扫码添加Robert教授微信</div>
+              <div className="py-1 lg:py-7 gap-6 lg:pl-10 h-full">
+                <div className="text-xl font-bold lg:text-2xl">扫码添加Robert教授微信</div>
                 <div className="h-full p-5 flex justify-center">
-                  <img className="h-1/2 lg:h-full" src={"/qr/wechat.jpeg"} />
+                  <img className="h-full lg:h-full" src={"/qr/wechat.jpeg"} />
                 </div>
               </div>
             )}
