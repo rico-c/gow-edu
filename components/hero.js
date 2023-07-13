@@ -113,8 +113,8 @@ const Hero = () => {
         className="w-full flex justify-center mt-5 lg:mt-10 h-auto lg:h-72"
         style={{ backgroundColor: "#0d7a98" }}
       >
-        <div className="relative p-5 lg:p-0 lg:w-1/2 flex">
-          <div className="hidden lg:block lg:w-60">
+        <div className="relative p-5 lg:p-0 flex">
+          <div className="hidden lg:block lg:w-60" style={{width: '220px'}}>
             <Image
               className="absolute bottom-0 left-0 h-auto"
               src={"/img/robert.png"}
