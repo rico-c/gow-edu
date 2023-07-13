@@ -29,7 +29,7 @@ const Hero = () => {
 
   return (
     <>
-      <Carousel autoplay className="w-full">
+      <Carousel autoplay swipeToSlide draggable className="w-full">
         <div className="relative">
           <div
             className="absolute top-1/2 left-1/2 text-xl text-white md:text-4xl lg:text-8xl"
