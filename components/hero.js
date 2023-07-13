@@ -29,7 +29,7 @@ const Hero = () => {
 
   return (
     <>
-      <Carousel autoplay swipeToSlide draggable className="w-full">
+      <Carousel autoplay swipeToSlide draggable className="w-full" style={{minHeight: "calc(100vw * 0.36)"}}>
         <div className="relative">
           <div
             className="absolute top-1/2 left-1/2 text-xl text-white md:text-4xl lg:text-8xl"
@@ -39,7 +39,6 @@ const Hero = () => {
           </div>
           <img
             src={"/banner/home_banner1.png"}
-            fill="true"
             alt="Hero Illustration"
           />
         </div>
@@ -52,7 +51,6 @@ const Hero = () => {
           </div>
           <img
             src={"/banner/home_banner2.png"}
-            fill="true"
             alt="Hero Illustration"
           />
         </div>
@@ -65,7 +63,6 @@ const Hero = () => {
           </div>
           <img
             src={"/banner/home_banner3.png"}
-            fill="true"
             alt="Hero Illustration"
           />
         </div>
