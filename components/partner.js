@@ -25,7 +25,7 @@ const PartnerForm = () => {
             >
               <Input placeholder={t("partner-title")} />
             </Form.Item>
-            <div>{t("partner-desc")}</div>
+            <div dangerouslySetInnerHTML={{__html: t("partner-desc")}}></div>
             <Form.Item
               label={t("partner-form-first-name")}
               name="firstname"

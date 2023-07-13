@@ -4,44 +4,75 @@ import Navbar from "../components/navbar";
 import { useTranslation } from "next-i18next";
 import { List, Select, Table } from "antd";
 import Link from "next/link";
+import { fetchSelectList, fetchRankingList } from "../api/rank";
 
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-
-const dataSource = [
-  {
-    key: '1',
-    name: '胡彦斌',
-    age: 32,
-    address: '西湖区湖底公园1号',
-  },
-  {
-    key: '2',
-    name: '胡彦祖',
-    age: 42,
-    address: '西湖区湖底公园1号',
-  },
-];
+import { useEffect, useState } from "react";
 
 const columns = [
   {
-    title: '姓名',
-    dataIndex: 'name',
-    key: 'name',
+    title: "Times Rank",
+    dataIndex: "rank",
+    key: "rank",
   },
   {
-    title: '年龄',
-    dataIndex: 'age',
-    key: 'age',
+    title: "Institution",
+    dataIndex: "school_name",
+    key: "school_name",
+    render: (text, record, index) => {
+      console.log(record);
+      return <div className="flex items-center gap-10"><img src={record.logo_url} width="120" /><span className="font-bold">{text}</span></div>
+    }
   },
   {
-    title: '住址',
-    dataIndex: 'address',
-    key: 'address',
+    title: "State/Region",
+    dataIndex: "state_name",
+    key: "state_name",
+  },
+  {
+    title: "City",
+    dataIndex: "city_name",
+    key: "city_name",
   },
 ];
 
 const University = () => {
   const { t } = useTranslation("university");
+
+  const [countries, setCountries] = useState([]);
+  const [years, setYears] = useState([]);
+
+  const [currentCountry, setCurrentCountry] = useState();
+  const [currentYear, setCurrentYear] = useState();
+
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    const getSelectList = async () => {
+      const res = await fetchSelectList();
+      console.log(res);
+      setCountries(res.country_list);
+      setCurrentCountry(res.country_list[0].country_code);
+      setYears(res.year_list);
+      setCurrentYear(res.year_list[0]);
+    };
+    getSelectList();
+  }, []);
+
+  useEffect(() => {
+    const getList = async () => {
+      const res = await fetchRankingList({
+        country: currentCountry,
+        year: currentYear,
+      });
+      console.log(">>>res", res);
+      setData(res.rank_list)
+    };
+    if(currentCountry && currentYear) {
+      getList();
+    }
+  }, [currentCountry, currentYear]);
+
   return (
     <>
       <Head>
@@ -86,37 +117,73 @@ const University = () => {
             <div className="text-xl font-bold py-5">{t("destination")}</div>
             <div className="flex gap-5">
               <Select
-                defaultValue="Australia"
                 size="large"
+                value={currentCountry}
                 style={{ width: 240 }}
-                options={[
-                  { value: "Australia", label: "Australia" },
-                ]}
+                onChange={(v) => setCurrentCountry(v)}
+                options={countries.map((i) => ({
+                  value: i.country_code,
+                  label: i.country_name,
+                }))}
               />
               <Select
-                defaultValue="2022"
                 size="large"
+                value={currentYear}
                 style={{ width: 240 }}
-                options={[
-                  { value: "2021", label: "2021" },
-                  { value: "2022", label: "2022" },
-                ]}
+                onChange={(v) => setCurrentYear(v)}
+                options={years.map((i) => ({ value: i, label: i }))}
               />
             </div>
-            <div className="text-xl font-bold py-5">{t('partner')} - Australia</div> 
-            <div>
-            <Table dataSource={dataSource} columns={columns} />
+            <div className="text-xl font-bold py-5">
+              {t("partner")} - Australia
             </div>
-            <div className="text-xl font-bold py-5">{t('top-university')} - Australia</div> 
+            <div>
+              <Table dataSource={data} columns={columns} />
+            </div>
+            <div className="text-xl font-bold py-5">
+              {t("top-university")} - Australia
+            </div>
             <div className="flex flex-wrap gap-5">
-              <div className="w-1/5 shadow flex justify-center items-center p-1 rounded"><Link href="/detail/meilbourne"><img src="/universities/Melbourne.png" /></Link></div>
-              <div className="w-1/5 shadow flex justify-center items-center p-1 rounded"><Link href="/detail/queensland"><img src="/universities/Queensland.png" /></Link></div>
-              <div className="w-1/5 shadow flex justify-center items-center p-1 rounded"><Link href="/detail/national"><img src="/universities/National.png" /></Link></div>
-              <div className="w-1/5 shadow flex justify-center items-center p-1 rounded"><Link href="/detail/monash"><img src="/universities/Monash.png" /></Link></div>
-              <div className="w-1/5 shadow flex justify-center items-center p-1 rounded"><Link href="/detail/sydney"><img src="/universities/The_University_of_Sydney.png" /></Link></div>
-              <div className="w-1/5 shadow flex justify-center items-center p-1 rounded"><Link href="/detail/nsw"><img src="/universities/NSW.png" /></Link></div>
-              <div className="w-1/5 shadow flex justify-center items-center p-1 rounded"><Link href="/detail/adelade"><img src="/universities/Adelaide.png" /></Link></div>
-              <div className="w-1/5 shadow flex justify-center items-center p-1 rounded"><Link href="/detail/western"><img src="/universities/Western.png" /></Link></div>
+              <div className="w-1/5 shadow flex justify-center items-center p-1 rounded">
+                <Link href={`/detail/1?year=${currentYear}`}>
+                  <img src="/universities/Melbourne.png" />
+                </Link>
+              </div>
+              <div className="w-1/5 shadow flex justify-center items-center p-1 rounded">
+                <Link href={`/detail/4?year=${currentYear}`}>
+                  <img src="/universities/Queensland.png" />
+                </Link>
+              </div>
+              <div className="w-1/5 shadow flex justify-center items-center p-1 rounded">
+                <Link href={`/detail/3?year=${currentYear}`}>
+                  <img src="/universities/National.png" />
+                </Link>
+              </div>
+              <div className="w-1/5 shadow flex justify-center items-center p-1 rounded">
+                <Link href={`/detail/5?year=${currentYear}`}>
+                  <img src="/universities/Monash.png" />
+                </Link>
+              </div>
+              <div className="w-1/5 shadow flex justify-center items-center p-1 rounded">
+                <Link href={`/detail/2?year=${currentYear}`}>
+                  <img src="/universities/The_University_of_Sydney.png" />
+                </Link>
+              </div>
+              <div className="w-1/5 shadow flex justify-center items-center p-1 rounded">
+                <Link href={`/detail/6?year=${currentYear}`}>
+                  <img src="/universities/NSW.png" />
+                </Link>
+              </div>
+              <div className="w-1/5 shadow flex justify-center items-center p-1 rounded">
+                <Link href={`/detail/7?year=${currentYear}`}>
+                  <img src="/universities/Adelaide.png" />
+                </Link>
+              </div>
+              <div className="w-1/5 shadow flex justify-center items-center p-1 rounded">
+                <Link href={`/detail/8?year=${currentYear}`}>
+                  <img src="/universities/Western.png" />
+                </Link>
+              </div>
             </div>
           </div>
         </div>
