@@ -1,19 +1,19 @@
 import Footer from "../../components/footer";
 import Head from "next/head";
 import Navbar from "../../components/navbar";
-import { useTranslation } from "next-i18next";
-import { useSearchParams } from "next/navigation";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { fetchSchool } from "../../api/rank";
-import { useEffect, useState } from "react";
+import {useTranslation} from "next-i18next";
+import {useSearchParams} from "next/navigation";
+import {serverSideTranslations} from "next-i18next/serverSideTranslations";
+import {fetchSchool} from "../../api/rank";
+import {useEffect, useState} from "react";
 
-const Detail = ({ name }) => {
+const Detail = ({name}) => {
   const searchParams = useSearchParams();
 
   const [data, setData] = useState(null);
 
   const year = searchParams.get("year");
-  const { t } = useTranslation("common");
+  const {t} = useTranslation("university");
   console.log(name, year);
 
   useEffect(() => {
@@ -49,34 +49,40 @@ const Detail = ({ name }) => {
                 {data.school_name}
               </div>
               <div className="flex gap-5">
-                <div>
+                <div className="flex justify-center items-center">
                   <img src={data.logo_url} width="180" />
                 </div>
                 <div>
-                  <div className="flex items-center">
-                    <img src={data.flag_url} width="50" height="20" />
-                    <span className="text-lg font-bold">
-                      {data.country_name}
-                    </span>
-                  </div>
-                  <div>
-                    <div>
-                      <span className="inline-block w-15">
-                        {t("world-rank")}&nbsp;{year}
+                  <div className="p-5">
+                    <div className="flex items-center gap-5 pb-5 border-b">
+                      <img src={data.flag_url} width="50" height="20" />
+                      <span className="text-lg font-bold">
+                        {data.country_name}
                       </span>
-                      <span>{data.rank}</span>
                     </div>
-                    <div>
-                      <span className="inline-block w-15">{t("city")}</span>
-                      <span>{data.city}</span>
+                    <div className="flex pt-5">
+                      <div className="w-40">
+                        {t("world-rank")}&nbsp;{year}
+                      </div>
+                      <div className="font-bold">{data.rank}</div>
                     </div>
-                    <div>
-                      <span className="inline-block w-15">{t("state")}</span>
-                      <span>{data.state}</span>
+                    <div className="flex pt-5">
+                      <div className="w-40">{t("city")}</div>
+                      <div className="font-bold">{data.city}</div>
+                    </div>
+                    <div className="flex pt-5">
+                      <div className="w-40">{t("state")}</div>
+                      <div className="font-bold">{data.state}</div>
                     </div>
                   </div>
                 </div>
               </div>
+              <div className="text-3xl fotn-bold pt-5">{t('overview')}</div>
+              <div className="pt-5 leading-7" dangerouslySetInnerHTML={{__html: data.school_info}}></div>
+              <div className="pb-5"><img width="100%" src={data.school_image_url} /></div>
+              <div className="text-3xl fotn-bold pt-5">{t('location')}</div>
+              <div className="pt-5 leading-7" dangerouslySetInnerHTML={{__html: data.city_info}}></div>
+              <div className="pb-5"><img width="100%" src={data.city_image_url} /></div>
             </div>
           </div>
         </div>
@@ -88,7 +94,7 @@ const Detail = ({ name }) => {
 
 export default Detail;
 
-export async function getStaticProps({ locale, params }) {
+export async function getStaticProps({locale, params}) {
   return {
     props: {
       ...(await serverSideTranslations(locale, ["common", "university"])),

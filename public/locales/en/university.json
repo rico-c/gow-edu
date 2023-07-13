@@ -15,5 +15,7 @@
   "state": "State/Region",
   "city": "City",
   "top-university": "Top Universities in Australia",
-  "world-rank": "World Rank"
+  "world-rank": "World Rank",
+  "location": "University Location",
+  "overview": "Overview"
 }
