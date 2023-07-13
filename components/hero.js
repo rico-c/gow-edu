@@ -138,13 +138,13 @@ const Hero = () => {
               <Form onFinish={handleNewLetter}>
               <div className="py-7 lg:flex gap-6">
                 <div>
-                  <div>{t("name")}</div>
+                  <div className="text-white">{t("name")}</div>
                   <Form.Item name="name">
                   <Input />
                   </Form.Item>
                 </div>
                 <div>
-                  <div>{t("email")}</div>
+                  <div className="text-white">{t("email")}</div>
                   <Form.Item name="email">
                   <Input />
                   </Form.Item>

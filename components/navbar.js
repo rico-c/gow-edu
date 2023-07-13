@@ -1,14 +1,14 @@
 import Link from "next/link";
 import ThemeChanger from "./DarkSwitch";
-import { useRouter } from "next/router";
+import {useRouter} from "next/router";
 import Image from "next/image";
-import { Disclosure } from "@headlessui/react";
-import { useTranslation } from "next-i18next";
+import {Disclosure} from "@headlessui/react";
+import {useTranslation} from "next-i18next";
 import TranslateIcon from "@mui/icons-material/Translate";
 import IconButton from "@mui/material/IconButton";
 
 const Navbar = () => {
-  const { t } = useTranslation("common");
+  const {t} = useTranslation("common");
   const router = useRouter();
   const navigation = [
     {
@@ -53,12 +53,12 @@ const Navbar = () => {
       <nav className="container relative flex flex-wrap items-center justify-between p-3 mx-auto xl:justify-between xl:px-0">
         {/* Logo  */}
         <Disclosure>
-          {({ open }) => (
+          {({open}) => (
             <>
               <div className="flex flex-wrap items-center justify-between w-full xl:w-auto">
                 <Link href="/">
                   <span
-                    style={{ height: "70px" }}
+                    style={{height: "70px"}}
                     className="flex items-center space-x-2 text-2xl font-medium text-cyan-700 dark:text-gray-100"
                   >
                     <Image
@@ -110,6 +110,11 @@ const Navbar = () => {
                         {t(item.label)}
                       </Link>
                     ))}
+                    <Link href={{pathname: router.pathname}} locale={changeTo} className="text-center w-full px-4 py-2 -ml-4 text-gray-500 rounded-md dark:text-gray-300 hover:text-cyan-700 focus:text-cyan-700 focus:bg-indigo-100 dark:focus:bg-gray-800 focus:outline-none">
+                      <IconButton className="text-gray-500 dark:text-gray-300">
+                        <TranslateIcon />
+                      </IconButton>
+                    </Link>
                   </>
                 </Disclosure.Panel>
               </div>

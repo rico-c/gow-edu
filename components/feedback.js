@@ -3,7 +3,6 @@ import Container from "./container";
 import { useTranslation } from "next-i18next";
 
 const QuoteIcon = ({rightside}) => {
-  console.log('rightside', rightside);
   return <img className={`absolute w-7 h-7 ${rightside ? 'right-10' : 'left-10'}`} style={{top: '-10px', transform: rightside ? 'rotateY(180deg)' : 'null' }} src={"/img/home-marks2.png"} />;
 };
 
@@ -32,7 +31,7 @@ const Feedback = () => {
           </div>
         </div>
         <div className="md:flex py-5">
-          <div className="shadow p-5 md:w-1/2 mt-5 md:mt-0 relative md:p-10 bg-white rounded">
+          <div className="hidden md:block shadow p-5 md:w-1/2 mt-5 md:mt-0 relative md:p-10 bg-white rounded">
             <QuoteIcon />
             <div dangerouslySetInnerHTML={{ __html: t("feedback-2") }}></div>
           </div>
@@ -42,6 +41,10 @@ const Feedback = () => {
               src={"/img/home-note2.png"}
               alt="note"
             />
+          </div>
+          <div className="block md:hidden shadow p-5 md:w-1/2 mt-5 md:mt-0 relative md:p-10 bg-white rounded">
+            <QuoteIcon />
+            <div dangerouslySetInnerHTML={{ __html: t("feedback-2") }}></div>
           </div>
         </div>
         <div className="md:flex py-5">
@@ -58,7 +61,7 @@ const Feedback = () => {
           </div>
         </div>
         <div className="md:flex py-5">
-          <div className="shadow p-5 md:w-1/2 mt-5 md:mt-0 relative md:p-10 bg-white rounded">
+          <div className="hidden md:block shadow p-5 md:w-1/2 mt-5 md:mt-0 relative md:p-10 bg-white rounded">
             <QuoteIcon />
             <div dangerouslySetInnerHTML={{ __html: t("feedback-4") }}></div>
           </div>
@@ -68,6 +71,10 @@ const Feedback = () => {
               src={"/img/home-note4.png"}
               alt="note"
             />
+          </div>
+          <div className="block md:hidden shadow p-5 md:w-1/2 mt-5 md:mt-0 relative md:p-10 bg-white rounded">
+            <QuoteIcon />
+            <div dangerouslySetInnerHTML={{ __html: t("feedback-4") }}></div>
           </div>
         </div>
       </Container>
