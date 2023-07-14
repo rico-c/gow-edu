@@ -44,7 +44,7 @@ const Detail = ({name}) => {
             <img src="/img/b3.png" />
           </div>
           <div className="flex justify-center pt-10">
-            <div className="w-1/2">
+            <div className="w-full md:w-1/2">
               <div className="text-2xl font-bold main-color">
                 {data.school_name}
               </div>

@@ -86,7 +86,7 @@ const University = () => {
           <img src="/img/findmyuniversity.jpg" alt="university" />
         </div>
         <div className="flex justify-center py-10">
-          <div className="w-3/5 ">
+          <div className="px-5 md:px-0 w-full md:w-3/5 ">
             <div className="main-color text-3xl font-bold pb-5">
               {t("title")}
             </div>
