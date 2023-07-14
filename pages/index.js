@@ -15,7 +15,7 @@ const Home = () => {
 
   useEffect(() => {
     (window).$crisp=[];
-    (window).CRISP_WEBSITE_ID="09c5c023-ef8b-4d40-b073-460bfe43be9f";
+    (window).CRISP_WEBSITE_ID="e60fe710-4049-471d-8dab-b61e41152145";
     let d=document;
     let s=d.createElement("script");
     s.src="https://client.crisp.chat/l.js";
