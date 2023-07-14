@@ -21,7 +21,7 @@ const columns = [
     key: "school_name",
     render: (text, record, index) => {
       console.log(record);
-      return <div className="flex items-center gap-10"><img src={record.logo_url} width="120" /><span className="font-bold">{text}</span></div>
+      return <div className="flex items-center gap-10"><span className="font-bold">{text}</span></div>
     }
   },
   {
