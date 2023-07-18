@@ -12,3 +12,6 @@
 .main-color {
   color: #f05622;
 }
+.feedback-card-shadow {
+  box-shadow: 0px 8px 15px 1px rgba(13, 122, 152, 0.2);
+}

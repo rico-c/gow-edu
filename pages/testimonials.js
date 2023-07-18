@@ -37,13 +37,13 @@ const Testimonials = () => {
               alt="note"
             />
           </div>
-          <div className="shadow p-5 md:w-1/2 mt-5 md:mt-0 relative md:p-10 bg-white rounded">
+          <div className="feedback-card-shadow p-5 md:w-1/2 mt-5 md:mt-0 relative md:p-10 bg-white rounded">
             <QuoteIcon rightside />
             <div dangerouslySetInnerHTML={{ __html: t("testimonials-1") }}></div>
           </div>
         </div>
         <div className="md:flex py-5">
-          <div className="shadow p-5 md:w-1/2 mt-5 md:mt-0 relative md:p-10 bg-white rounded">
+          <div className="hidden md:block feedback-card-shadow p-5 md:w-1/2 mt-5 md:mt-0 relative md:p-10 bg-white rounded">
             <QuoteIcon />
             <div dangerouslySetInnerHTML={{ __html: t("testimonials-2") }}></div>
           </div>
@@ -54,6 +54,10 @@ const Testimonials = () => {
               alt="note"
             />
           </div>
+          <div className="block md:hidden feedback-card-shadow p-5 md:w-1/2 mt-5 md:mt-0 relative md:p-10 bg-white rounded">
+            <QuoteIcon />
+            <div dangerouslySetInnerHTML={{ __html: t("testimonials-2") }}></div>
+          </div>
         </div>
         <div className="md:flex py-5">
           <div className="md:mb-5 md:w-1/2">
@@ -63,13 +67,13 @@ const Testimonials = () => {
               alt="note"
             />
           </div>
-          <div className="shadow p-5 md:w-1/2 mt-5 md:mt-0 relative md:p-10 bg-white rounded">
+          <div className="feedback-card-shadow p-5 md:w-1/2 mt-5 md:mt-0 relative md:p-10 bg-white rounded">
             <QuoteIcon rightside />
             <div dangerouslySetInnerHTML={{ __html: t("testimonials-3") }}></div>
           </div>
         </div>
         <div className="md:flex py-5">
-          <div className="shadow p-5 md:w-1/2 mt-5 md:mt-0 relative md:p-10 bg-white rounded">
+          <div className="hidden md:block feedback-card-shadow p-5 md:w-1/2 mt-5 md:mt-0 relative md:p-10 bg-white rounded">
             <QuoteIcon />
             <div dangerouslySetInnerHTML={{ __html: t("testimonials-4") }}></div>
           </div>
@@ -80,6 +84,10 @@ const Testimonials = () => {
               alt="note"
             />
           </div>
+          <div className="block md:hidden feedback-card-shadow p-5 md:w-1/2 mt-5 md:mt-0 relative md:p-10 bg-white rounded">
+            <QuoteIcon />
+            <div dangerouslySetInnerHTML={{ __html: t("testimonials-4") }}></div>
+          </div>
         </div>
         <div className="md:flex py-5">
           <div className="md:mb-5 md:w-1/2">
@@ -89,13 +97,13 @@ const Testimonials = () => {
               alt="note"
             />
           </div>
-          <div className="shadow p-5 md:w-1/2 mt-5 md:mt-0 relative md:p-10 bg-white rounded">
+          <div className="feedback-card-shadow p-5 md:w-1/2 mt-5 md:mt-0 relative md:p-10 bg-white rounded">
             <QuoteIcon rightside />
             <div dangerouslySetInnerHTML={{ __html: t("testimonials-5") }}></div>
           </div>
         </div>
         <div className="md:flex py-5">
-          <div className="shadow p-5 md:w-1/2 mt-5 md:mt-0 relative md:p-10 bg-white rounded">
+          <div className="hidden md:block feedback-card-shadow p-5 md:w-1/2 mt-5 md:mt-0 relative md:p-10 bg-white rounded">
             <QuoteIcon />
             <div dangerouslySetInnerHTML={{ __html: t("testimonials-6") }}></div>
           </div>
@@ -105,6 +113,10 @@ const Testimonials = () => {
               src={"/img/testimonials6.png"}
               alt="note"
             />
+          </div>
+          <div className="block md:hidden feedback-card-shadow p-5 md:w-1/2 mt-5 md:mt-0 relative md:p-10 bg-white rounded">
+            <QuoteIcon />
+            <div dangerouslySetInnerHTML={{ __html: t("testimonials-6") }}></div>
           </div>
         </div>
       </Container>
