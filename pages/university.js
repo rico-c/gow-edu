@@ -1,13 +1,13 @@
 import Footer from "../components/footer";
 import Head from "next/head";
 import Navbar from "../components/navbar";
-import { useTranslation } from "next-i18next";
-import { List, Select, Table } from "antd";
+import {useTranslation} from "next-i18next";
+import {List, Select, Table} from "antd";
 import Link from "next/link";
-import { fetchSelectList, fetchRankingList } from "../api/rank";
+import {fetchSelectList, fetchRankingList} from "../api/rank";
 
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { useEffect, useState } from "react";
+import {serverSideTranslations} from "next-i18next/serverSideTranslations";
+import {useEffect, useState} from "react";
 
 const columns = [
   {
@@ -20,7 +20,6 @@ const columns = [
     dataIndex: "school_name",
     key: "school_name",
     render: (text, record, index) => {
-      console.log(record);
       return <div className="flex items-center gap-10"><span className="font-bold">{text}</span></div>
     }
   },
@@ -37,7 +36,7 @@ const columns = [
 ];
 
 const University = () => {
-  const { t } = useTranslation("university");
+  const {t} = useTranslation("university");
 
   const [countries, setCountries] = useState([]);
   const [years, setYears] = useState([]);
@@ -46,6 +45,7 @@ const University = () => {
   const [currentYear, setCurrentYear] = useState();
 
   const [data, setData] = useState([]);
+  const [info, setInfo] = useState({});
 
   useEffect(() => {
     const getSelectList = async () => {
@@ -66,9 +66,10 @@ const University = () => {
         year: currentYear,
       });
       console.log(">>>res", res);
-      setData(res.rank_list)
+      setData(res.rank_list);
+      setInfo(res);
     };
-    if(currentCountry && currentYear) {
+    if (currentCountry && currentYear) {
       getList();
     }
   }, [currentCountry, currentYear]);
@@ -101,15 +102,15 @@ const University = () => {
             <div className="text-lg pb-5">{t("sub-title-1")}</div>
             <div className="max-w-md">
               <List bordered>
-                <List.Item style={{ backgroundColor: "#f5f5f5" }}>
+                <List.Item style={{backgroundColor: "#f5f5f5"}}>
                   {t("areas-1")}
                 </List.Item>
                 <List.Item>{t("areas-2")}</List.Item>
-                <List.Item style={{ backgroundColor: "#f5f5f5" }}>
+                <List.Item style={{backgroundColor: "#f5f5f5"}}>
                   {t("areas-3")}
                 </List.Item>
                 <List.Item>{t("areas-4")}</List.Item>
-                <List.Item style={{ backgroundColor: "#f5f5f5" }}>
+                <List.Item style={{backgroundColor: "#f5f5f5"}}>
                   {t("areas-5")}
                 </List.Item>
               </List>
@@ -119,7 +120,7 @@ const University = () => {
               <Select
                 size="large"
                 value={currentCountry}
-                style={{ width: 240 }}
+                style={{width: 240}}
                 onChange={(v) => setCurrentCountry(v)}
                 options={countries.map((i) => ({
                   value: i.country_code,
@@ -129,61 +130,28 @@ const University = () => {
               <Select
                 size="large"
                 value={currentYear}
-                style={{ width: 240 }}
+                style={{width: 240}}
                 onChange={(v) => setCurrentYear(v)}
-                options={years.map((i) => ({ value: i, label: i }))}
+                options={years.map((i) => ({value: i, label: i}))}
               />
             </div>
             <div className="text-xl font-bold py-5">
-              {t("partner")} - Australia
+              {t("partner")} - {info.country_name}
             </div>
             <div>
               <Table dataSource={data} columns={columns} />
             </div>
             <div className="text-xl font-bold py-5">
-              {t("top-university")} - Australia
+              {t("top-university")} - {info.country_name}
             </div>
             <div className="flex flex-wrap gap-5">
-              <div className="w-1/5 shadow flex justify-center items-center p-1 rounded">
-                <Link href={`/detail/1?year=${currentYear}`}>
-                  <img src="/universities/Melbourne.png" />
-                </Link>
-              </div>
-              <div className="w-1/5 shadow flex justify-center items-center p-1 rounded">
-                <Link href={`/detail/4?year=${currentYear}`}>
-                  <img src="/universities/Queensland.png" />
-                </Link>
-              </div>
-              <div className="w-1/5 shadow flex justify-center items-center p-1 rounded">
-                <Link href={`/detail/3?year=${currentYear}`}>
-                  <img src="/universities/National.png" />
-                </Link>
-              </div>
-              <div className="w-1/5 shadow flex justify-center items-center p-1 rounded">
-                <Link href={`/detail/5?year=${currentYear}`}>
-                  <img src="/universities/Monash.png" />
-                </Link>
-              </div>
-              <div className="w-1/5 shadow flex justify-center items-center p-1 rounded">
-                <Link href={`/detail/2?year=${currentYear}`}>
-                  <img src="/universities/The_University_of_Sydney.png" />
-                </Link>
-              </div>
-              <div className="w-1/5 shadow flex justify-center items-center p-1 rounded">
-                <Link href={`/detail/6?year=${currentYear}`}>
-                  <img src="/universities/NSW.png" />
-                </Link>
-              </div>
-              <div className="w-1/5 shadow flex justify-center items-center p-1 rounded">
-                <Link href={`/detail/7?year=${currentYear}`}>
-                  <img src="/universities/Adelaide.png" />
-                </Link>
-              </div>
-              <div className="w-1/5 shadow flex justify-center items-center p-1 rounded">
-                <Link href={`/detail/8?year=${currentYear}`}>
-                  <img src="/universities/Western.png" />
-                </Link>
-              </div>
+              {
+                data.slice(0, 8).map((i) => <div key={i.school_id} className="w-1/5 shadow flex justify-center items-center p-1 rounded">
+                  <Link href={`/detail/${i.school_id}?year=${currentYear}`}>
+                    <img src={i.logo_url} />
+                  </Link>
+                </div>)
+              }
             </div>
           </div>
         </div>
@@ -195,7 +163,7 @@ const University = () => {
 
 export default University;
 
-export async function getStaticProps({ locale }) {
+export async function getStaticProps({locale}) {
   return {
     props: {
       ...(await serverSideTranslations(locale, ["university", "common"])),
