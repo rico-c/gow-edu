@@ -6,18 +6,22 @@ import {Disclosure} from "@headlessui/react";
 import {useTranslation} from "next-i18next";
 import TranslateIcon from "@mui/icons-material/Translate";
 import IconButton from "@mui/material/IconButton";
+import {useEffect, useState} from "react";
 
 const Navbar = () => {
   const {t} = useTranslation("common");
   const router = useRouter();
+  const [currentNav, setNav] = useState("/")
+
+  console.log(router)
   const navigation = [
     {
       label: "home",
       route: "/",
     },
     {
-      label: "recommend",
-      route: "/testimonials",
+      label: "feedback",
+      route: "/feedback",
     },
     {
       label: "oversea",
@@ -47,6 +51,11 @@ const Navbar = () => {
 
   const locale = router.locale;
   const changeTo = locale === "en" ? "zh" : "en";
+
+  useEffect(() => {
+    const r = router.route.split('/')[1];
+    setNav(`/${r}`)
+  }, [router.route])
 
   return (
     <div className="w-full">
@@ -105,12 +114,12 @@ const Navbar = () => {
                       <Link
                         key={index}
                         href={item.route}
-                        className="text-center w-full px-4 py-2 -ml-4 text-gray-500 rounded-md dark:text-gray-300 hover:text-cyan-700 focus:text-cyan-700 focus:bg-indigo-100 dark:focus:bg-gray-800 focus:outline-none"
+                        className={`${item.route === currentNav ? 'text-cyan-700' : 'text-gray-500'} text-center w-full px-4 py-2 -ml- rounded-md dark:text-gray-300 hover:text-cyan-700 focus:text-cyan-700 dark:focus:bg-gray-800 focus:outline-none`}
                       >
                         {t(item.label)}
                       </Link>
                     ))}
-                    <Link href={{pathname: router.pathname}} locale={changeTo} className="text-center w-full px-4 py-2 -ml-4 text-gray-500 rounded-md dark:text-gray-300 hover:text-cyan-700 focus:text-cyan-700 focus:bg-indigo-100 dark:focus:bg-gray-800 focus:outline-none">
+                    <Link href={{pathname: router.pathname}} locale={changeTo} className="text-center w-full px-4 py-2 -ml-4 text-gray-500 rounded-md dark:text-gray-300 hover:text-cyan-700 focus:text-cyan-700 dark:focus:bg-gray-800 focus:outline-none">
                       <IconButton className="text-gray-500 dark:text-gray-300">
                         <TranslateIcon />
                       </IconButton>
@@ -129,7 +138,7 @@ const Navbar = () => {
               <li className="nav__item" key={index}>
                 <Link
                   href={menu.route}
-                  className="font-bold inline-block px-4 py-2 text-lg font-normal text-gray-800 no-underline rounded-md dark:text-gray-200 hover:text-cyan-700 focus:text-cyan-700 focus:bg-indigo-100 focus:outline-none dark:focus:bg-gray-800"
+                  className={`${menu.route === currentNav ? 'text-cyan-700' : 'text-gray-800'} font-bold inline-block px-4 py-2 text-lg font-normal  no-underline rounded-md dark:text-gray-200 hover:text-cyan-700 focus:text-cyan-700 focus:bg-indigo-100 focus:outline-none dark:focus:bg-gray-800}`}
                 >
                   {t(menu.label)}
                 </Link>

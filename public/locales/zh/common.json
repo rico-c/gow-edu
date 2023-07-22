@@ -10,7 +10,6 @@
   "about": "关于",
   "contact": "联系我们",
   "partner": "合作伙伴",
-  "recommend": "推荐语",
   "slogan1": "成为",
   "slogan2": "最好的自己",
   "start": "开始",
@@ -18,7 +17,9 @@
   "discover": "浏览课程",
   "trusted-by": "超过",
   "trusted-by2": "留学生选择我们",
-  "be-presenter": "成为研讨会主讲人",
+  "become-partner": "成为合作伙伴",
+  "course-advise": "课程咨询",
+  "find-my-university": "发现我的心仪大学",
   "be-partner": "与我们合作",
   "more-about-gow": "了解更多关于高远教育 ...",
   "email-subscription": "免费获取Robert博士的每周激励和灵感。",
@@ -68,5 +69,9 @@
   "partner-form-category": "Your Category",
   "partner-form-file": "Please upload any relevant information about you",
   "partner-form-message": "Your Message",
-  "partner-form-apply": "申请"
+  "partner-form-apply": "申请",
+  "web-right": "GowEducation.com 2023 版权所有",
+  "terms-conditions": "使用条款",
+  "privacy-policy": "隐私政策",
+  "contact-us": "联系我们"
 }

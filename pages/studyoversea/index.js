@@ -1,7 +1,7 @@
-import Footer from "../components/footer";
+import Footer from "../../components/footer";
 import Head from "next/head";
-import Navbar from "../components/navbar";
-import { LessonItem } from "../components/lesson";
+import Navbar from "../../components/navbar";
+import { LessonItem } from "../../components/lesson";
 import { useTranslation } from "next-i18next";
 
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
@@ -26,7 +26,7 @@ const StudyOversea = () => {
             icon={"/img/Icon--Leader Prep.png"}
             title={t("oversea")}
             desc={t("lesson-desc1")}
-            link="/university"
+            link="/studyoversea/university"
           />
           <LessonItem
             icon={"/img/Icon-Turnitin Feedback.png"}

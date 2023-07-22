@@ -1,15 +1,16 @@
 import React from "react";
 import Link from "next/link";
-import { useTranslation } from "next-i18next";
-import { Button } from "antd";
+import {useTranslation} from "next-i18next";
+import {RightOutlined} from "@ant-design/icons";
+import {Button} from "antd";
 
-export const LessonItem = ({ icon, title, desc, link }) => {
-  const { t } = useTranslation("common");
+export const LessonItem = ({icon, title, desc, link}) => {
+  const {t} = useTranslation("common");
   return (
-    <div className="flex justify-center mt-10 w-full">
-      <div className="flex shadow rounded-lg w-5/6 md:w-1/2">
+    <div className="flex justify-center mt-10 w-ful">
+      <div className="flex shadow rounded-lg w-5/6 md:w-1/2 bg-white">
         <div
-          style={{ width: "350px" }}
+          style={{width: "410px"}}
           className="hidden md:flex justify-center items-center p-10 border-r"
         >
           <img width="130" src={icon} />
@@ -19,8 +20,9 @@ export const LessonItem = ({ icon, title, desc, link }) => {
           <div>{desc}</div>
           <div className="pt-5">
             <Link href={link}>
-              <Button style={{ background: "#f05622", color: "#fff" }}>
+              <Button style={{background: "#f05622", color: "#fff"}} className="flex items-center">
                 {t("read-more")}
+                <RightOutlined />
               </Button>
             </Link>
           </div>
@@ -31,9 +33,9 @@ export const LessonItem = ({ icon, title, desc, link }) => {
 };
 
 const Lesson = () => {
-  const { t } = useTranslation("common");
+  const {t} = useTranslation("common");
   return (
-    <>
+    <div style={{backgroundColor: '#f6f6f6'}} className="py-8">
       <LessonItem
         icon={"/img/Icon-Turnitin Feedback.png"}
         title={t("lesson-title1")}
@@ -46,7 +48,7 @@ const Lesson = () => {
         desc={t("lesson-desc2")}
         link="/studyoversea"
       />
-    </>
+    </div>
   );
 };
 

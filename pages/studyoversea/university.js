@@ -1,10 +1,10 @@
-import Footer from "../components/footer";
+import Footer from "../../components/footer";
 import Head from "next/head";
-import Navbar from "../components/navbar";
+import Navbar from "../../components/navbar";
 import {useTranslation} from "next-i18next";
 import {List, Select, Table} from "antd";
 import Link from "next/link";
-import {fetchSelectList, fetchRankingList} from "../api/rank";
+import {fetchSelectList, fetchRankingList} from "../../api/rank";
 
 import {serverSideTranslations} from "next-i18next/serverSideTranslations";
 import {useEffect, useState} from "react";
@@ -147,7 +147,7 @@ const University = () => {
             <div className="flex flex-wrap gap-5">
               {
                 data.slice(0, 8).map((i) => <div key={i.school_id} className="w-1/5 shadow flex justify-center items-center p-1 rounded">
-                  <Link href={`/detail/${i.school_id}?year=${currentYear}`}>
+                  <Link href={`/studyoversea/detail/${i.school_id}?year=${currentYear}`}>
                     <img src={i.logo_url} />
                   </Link>
                 </div>)

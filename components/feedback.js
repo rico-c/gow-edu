@@ -11,7 +11,7 @@ const Feedback = () => {
   return (
     <>
       <div
-        className="w-full h-20 mt-10 flex justify-center items-center"
+        className="w-full h-20 flex justify-center items-center"
         style={{ backgroundColor: "#0d7a98" }}
       >
         <span className="text-white font-bold">{t("feedback")}</span>

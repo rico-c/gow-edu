@@ -1,10 +1,10 @@
-import Footer from "../../components/footer";
+import Footer from "../../../components/footer";
 import Head from "next/head";
-import Navbar from "../../components/navbar";
+import Navbar from "../../../components/navbar";
 import {useTranslation} from "next-i18next";
 import {useSearchParams} from "next/navigation";
 import {serverSideTranslations} from "next-i18next/serverSideTranslations";
-import {fetchSchool} from "../../api/rank";
+import {fetchSchool} from "../../../api/rank";
 import {useEffect, useState} from "react";
 
 const Detail = ({name}) => {

@@ -73,31 +73,31 @@ const Hero = () => {
           <div className="lg:w-1/2 py-5 md:flex justify-between">
             <Button type="link" className="flex">
               <Link
-                href="/about"
-                className="sm:text-sm lg:text-xl flex items-center gap-2"
-                style={{ color: "#f05622" }}
-              >
-                {t("be-presenter")}
-                <RightOutlined />
-              </Link>
-            </Button>
-            <Button type="link" className="flex">
-              <Link
                 href="/partner"
-                className="sm:text-sm lg:text-xl flex items-center gap-2"
+                className="sm:text-sm lg:text-xl flex items-center gap-2 font-bold"
                 style={{ color: "#f05622" }}
               >
-                {t("be-partner")}
+                {t("become-partner")}
                 <RightOutlined />
               </Link>
             </Button>
             <Button type="link" className="flex">
               <Link
-                href="/recommended"
-                className="sm:text-sm lg:text-xl flex items-center gap-2"
+                href="/contact"
+                className="sm:text-sm lg:text-xl flex items-center gap-2 font-bold"
                 style={{ color: "#f05622" }}
               >
-                {t("recommend")}
+                {t("course-advise")}
+                <RightOutlined />
+              </Link>
+            </Button>
+            <Button type="link" className="flex">
+              <Link
+                href="/university"
+                className="sm:text-sm lg:text-xl flex items-center gap-2 font-bold"
+                style={{ color: "#f05622" }}
+              >
+                {t("find-my-university")}
                 <RightOutlined />
               </Link>
             </Button>

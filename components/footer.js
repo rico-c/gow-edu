@@ -2,8 +2,8 @@ import Link from "next/link";
 import Image from "next/image";
 import React from "react";
 import Container from "./container";
-import { useRouter } from "next/router";
-import { useTranslation } from "next-i18next";
+import {useRouter} from "next/router";
+import {useTranslation} from "next-i18next";
 
 const navigation = [
   {
@@ -41,12 +41,12 @@ const navigation = [
 ];
 
 export default function Footer() {
-  const { t } = useTranslation("common");
+  const {t} = useTranslation("common");
   const router = useRouter();
   return (
     <div
       className="relative"
-      style={{ backgroundColor: "#383838", color: "#8e8e8e" }}
+      style={{backgroundColor: "#383838", color: "#8e8e8e"}}
     >
       <div className="md:flex items-center justify-center gap-20 py-10">
         <div className="flex justify-center">
@@ -71,7 +71,7 @@ export default function Footer() {
       </div>
 
       <div className="py-5 text-sm md:flex justify-center border-t">
-        <div className="flex justify-center">© GowEducation.com 2021 版权所有 </div><div className="flex justify-center"> <a className="px-2 cursor-pointer">使用条款 </a> | <a className="px-2 cursor-pointer">隐私政策</a> | <a className="px-2 cursor-pointer">联系我们</a></div>
+        <div className="flex justify-center">© {t('web-right')} </div><div className="flex justify-center"> <a className="px-2 cursor-pointer">{t('terms-conditions')} </a> | <a className="px-2 cursor-pointer">{t('privacy-policy')}</a> | <a className="px-2 cursor-pointer">{t('contact-us')}</a></div>
       </div>
     </div>
   );

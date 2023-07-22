@@ -9,7 +9,6 @@
   "phd": "PhD-Ready",
   "about": "About",
   "contact": "Contact",
-  "recommend": "Testimonials",
   "partner": "Partner",
   "slogan1": "To be your",
   "slogan2": "best yourself",
@@ -18,7 +17,9 @@
   "discover": "discover our lessons",
   "trusted-by": "Trusted by",
   "trusted-by2": "international students worldwide",
-  "be-presenter": "Become a Workshop Presenter",
+  "become-partner": "Become a Partner",
+  "course-advise": "Course Advice",
+  "find-my-university": "Find My University",
   "be-partner": "Partner with us",
   "more-about-gow": "Learn more about Gow Education ...",
   "email-subscription": "Free access to Dr Robert’s weekly motivation and inspiration.",
@@ -63,5 +64,9 @@
   "partner-form-category": "Your Category",
   "partner-form-file": "Please upload any relevant information about you",
   "partner-form-message": "Your Message",
-  "partner-form-apply": "Apply"
+  "partner-form-apply": "Apply",
+  "web-right": "GowEducation.com 2023 All rights reserved",
+  "terms-conditions": "Terms and Conditions",
+  "privacy-policy": "Privacy Policy",
+  "contact-us": "Contact Us"
 }
