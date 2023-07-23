@@ -1,9 +1,9 @@
 import Image from "next/image";
-import { Button, Input,Form ,Carousel} from "antd";
-import { RightOutlined } from "@ant-design/icons";
-import { useTranslation } from "next-i18next";
+import {Button, Input, Form, Carousel} from "antd";
+import {RightOutlined} from "@ant-design/icons";
+import {useTranslation} from "next-i18next";
 import Link from "next/link";
-import { useRouter } from "next/router";
+import {useRouter} from "next/router";
 import {fetchNewLetter} from '../api/new-letter'
 
 const labelStyle = {
@@ -13,12 +13,12 @@ const labelStyle = {
 };
 
 const Hero = () => {
-  const { t } = useTranslation("common");
+  const {t} = useTranslation("common");
   const router = useRouter();
   const locale = router.locale;
 
 
-  const handleNewLetter = async(data) => {
+  const handleNewLetter = async (data) => {
     console.log(data);
     const {name, email} = data;
     const res = await fetchNewLetter({
@@ -75,7 +75,7 @@ const Hero = () => {
               <Link
                 href="/partner"
                 className="sm:text-sm lg:text-xl flex items-center gap-2 font-bold"
-                style={{ color: "#f05622" }}
+                style={{color: "#f05622"}}
               >
                 {t("become-partner")}
                 <RightOutlined />
@@ -85,7 +85,7 @@ const Hero = () => {
               <Link
                 href="/contact"
                 className="sm:text-sm lg:text-xl flex items-center gap-2 font-bold"
-                style={{ color: "#f05622" }}
+                style={{color: "#f05622"}}
               >
                 {t("course-advise")}
                 <RightOutlined />
@@ -95,7 +95,7 @@ const Hero = () => {
               <Link
                 href="/university"
                 className="sm:text-sm lg:text-xl flex items-center gap-2 font-bold"
-                style={{ color: "#f05622" }}
+                style={{color: "#f05622"}}
               >
                 {t("find-my-university")}
                 <RightOutlined />
@@ -108,9 +108,9 @@ const Hero = () => {
       {/* 收集邮件订阅 */}
       <div
         className="w-full flex justify-center mt-5 h-60 lg:mt-10 h-auto lg:h-72"
-        style={{ backgroundColor: "#0d7a98" }}
+        style={{backgroundColor: "#0d7a98"}}
       >
-        <div className="relative p-5 lg:p-0 flex">
+        <div className="relative p-5 lg:p-0 flex gap-5">
           <div className="hidden lg:block lg:w-60" style={{width: '220px'}}>
             <Image
               className="absolute bottom-0 left-0 h-auto"
@@ -125,13 +125,15 @@ const Hero = () => {
               <img className="" src={"/img/home-asscimg.png"} alt="x" />
             </div> */}
             {locale === "en" && (
-              <>
-                <div className="text-2xl my-3.5">{t("email-subscription")}</div>
-                <div className="text-base">{t("email-subscription-desc")}</div>
-                <div className="text-base">{t("subscribtion-cancel")}</div>
-              </>
+              <div className="flex items-center h-full">
+                <div>
+                  <div className="text-2xl my-3.5">{t("email-subscription")}</div>
+                  <div className="text-base">{t("email-subscription-desc")}</div>
+                  <div className="text-base">{t("subscribtion-cancel")}</div>
+                </div>
+              </div>
             )}
-            {locale === "en" && (
+            {/* {locale === "en" && (
               <Form onFinish={handleNewLetter}>
               <div className="py-7 lg:flex gap-6">
                 <div>
@@ -158,7 +160,7 @@ const Hero = () => {
                 </div>
               </div>
               </Form>
-            )}
+            )} */}
             {locale === "zh" && (
               <div className="py-1 lg:py-7 gap-6 lg:pl-10 h-full">
                 <div className="text-xl font-bold lg:text-2xl">扫码添加Robert教授微信</div>
@@ -168,6 +170,13 @@ const Hero = () => {
               </div>
             )}
           </div>
+          {
+            locale === 'en' && (<div className="flex items-center">
+              <Link href="/subscribe">
+                <Button className="bg-white w-full lg:w-auto flex items-center" style={{background: "#f05622", color: "#fff", border: 'none'}}>{t('read-more')}<RightOutlined /></Button>
+              </Link>
+            </div>)
+          }
         </div>
       </div>
     </>

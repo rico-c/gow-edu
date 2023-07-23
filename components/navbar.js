@@ -20,10 +20,6 @@ const Navbar = () => {
       route: "/",
     },
     {
-      label: "feedback",
-      route: "/feedback",
-    },
-    {
       label: "oversea",
       route: "/studyoversea",
     },
@@ -36,12 +32,16 @@ const Navbar = () => {
       route: "/phdready",
     },
     {
-      label: "about",
-      route: "/about",
-    },
-    {
       label: "partner",
       route: "/partner",
+    },
+    {
+      label: "feedback",
+      route: "/feedback",
+    },
+    {
+      label: "about",
+      route: "/about",
     },
     {
       label: "contact",

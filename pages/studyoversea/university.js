@@ -135,11 +135,18 @@ const University = () => {
                 options={years.map((i) => ({value: i, label: i}))}
               />
             </div>
+            <div>
+              <img className="pt-5 w-full" src={info.country_image_url} alt="university" />
+            </div>
             <div className="text-xl font-bold py-5">
-              {t("partner")} - {info.country_name}
+              {t("partner")} - <span className="main-color">{info.country_name}</span>
             </div>
             <div>
-              <Table dataSource={data} columns={columns} />
+              <Table dataSource={data} columns={columns} rowClassName={(record, index) => {
+                let className = 'light-row';
+                if (index % 2 === 1) className = 'dark-row';
+                return className;
+              }} />
             </div>
             <div className="text-xl font-bold py-5">
               {t("top-university")} - {info.country_name}

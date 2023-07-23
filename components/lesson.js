@@ -37,16 +37,22 @@ const Lesson = () => {
   return (
     <div style={{backgroundColor: '#f6f6f6'}} className="py-8">
       <LessonItem
-        icon={"/img/Icon-Turnitin Feedback.png"}
+        icon={"/img/book.png"}
         title={t("lesson-title1")}
         desc={t("lesson-desc1")}
         link="/"
       />
       <LessonItem
-        icon={"/img/Icon-Turnitin Feedback.png"}
+        icon={"/img/Icon--Leader Prep.png"}
         title={t("lesson-title2")}
         desc={t("lesson-desc2")}
         link="/studyoversea"
+      />
+      <LessonItem
+        icon={"/img/Icon--Leader Prep.png"}
+        title={t("lesson-title3")}
+        desc={t("lesson-desc3")}
+        link="/phdready"
       />
     </div>
   );

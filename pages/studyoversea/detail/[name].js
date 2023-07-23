@@ -78,10 +78,10 @@ const Detail = ({name}) => {
                 </div>
               </div>
               <div className="text-3xl fotn-bold pt-5">{t('overview')}</div>
-              <div className="pt-5 leading-7" dangerouslySetInnerHTML={{__html: data.school_info}}></div>
+              <div className="info-graph pt-5 leading-7" dangerouslySetInnerHTML={{__html: data.school_info}}></div>
               <div className="pb-5"><img width="100%" src={data.school_image_url} /></div>
               <div className="text-3xl fotn-bold pt-5">{t('location')}</div>
-              <div className="pt-5 leading-7" dangerouslySetInnerHTML={{__html: data.city_info}}></div>
+              <div className="info-graph pt-5 leading-7" dangerouslySetInnerHTML={{__html: data.city_info}}></div>
               <div className="pb-5"><img width="100%" src={data.city_image_url} /></div>
             </div>
           </div>

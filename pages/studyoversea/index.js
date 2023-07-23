@@ -17,32 +17,26 @@ const StudyOversea = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar />
-      <div className="py-5">
+      <div className="pb-5">
         <div>
           <img src={'/banner/home_banner2.png'} />
         </div>
         <div>
           <LessonItem
             icon={"/img/Icon--Leader Prep.png"}
-            title={t("oversea")}
+            title={t("course-advise")}
+            desc={t("lesson-desc1")}
+            link="/"
+          />
+          <LessonItem
+            icon={"/img/Icon-Turnitin Feedback.png"}
+            title={t("find-my-university")}
             desc={t("lesson-desc1")}
             link="/studyoversea/university"
           />
           <LessonItem
-            icon={"/img/Icon-Turnitin Feedback.png"}
-            title={t("lesson-title1")}
-            desc={t("lesson-desc1")}
-            link="/"
-          />
-          <LessonItem
             icon={"/img/Icon-Uni Prep.png"}
-            title={t("lesson-title1")}
-            desc={t("lesson-desc1")}
-            link="/"
-          />
-          <LessonItem
-            icon={"/img/icon_Live Masterclass.png"}
-            title={t("lesson-title1")}
+            title={t("phd-pre")}
             desc={t("lesson-desc1")}
             link="/"
           />

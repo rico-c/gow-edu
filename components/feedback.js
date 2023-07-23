@@ -11,10 +11,12 @@ const Feedback = () => {
   return (
     <>
       <div
-        className="w-full h-20 flex justify-center items-center"
+        className="w-full h-20 flex justify-center items-center gap-5"
         style={{ backgroundColor: "#0d7a98" }}
       >
+        <span style={{width: '50px', height: '2px', backgroundColor: '#fff'}}></span>
         <span className="text-white font-bold">{t("feedback")}</span>
+        <span style={{width: '50px', height: '2px', backgroundColor: '#fff'}}></span>
       </div>
       <Container className="md:w-3/4 flex-wrap mb-5 lg:gap-10 lg:flex-nowrap ">
         <div className="md:flex py-5">
