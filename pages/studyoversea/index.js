@@ -38,7 +38,7 @@ const StudyOversea = () => {
             icon={"/icon/icon_phD preparation@3x.png"}
             title={t("phd-pre")}
             desc={t("lesson-desc1")}
-            link="/"
+            link="/phdready"
           />
         </div>
       </div>
