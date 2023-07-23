@@ -23,19 +23,19 @@ const StudyOversea = () => {
         </div>
         <div>
           <LessonItem
-            icon={"/img/Icon--Leader Prep.png"}
+            icon={"/icon/Icon-Turnitin Feedback@2x.png"}
             title={t("course-advise")}
             desc={t("lesson-desc1")}
             link="/"
           />
           <LessonItem
-            icon={"/img/Icon-Turnitin Feedback.png"}
+            icon={"/icon/Icon-Uni Prep@2x.png"}
             title={t("find-my-university")}
             desc={t("lesson-desc1")}
             link="/studyoversea/university"
           />
           <LessonItem
-            icon={"/img/Icon-Uni Prep.png"}
+            icon={"/icon/icon_phD preparation@3x.png"}
             title={t("phd-pre")}
             desc={t("lesson-desc1")}
             link="/"

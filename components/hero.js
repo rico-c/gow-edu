@@ -125,42 +125,19 @@ const Hero = () => {
               <img className="" src={"/img/home-asscimg.png"} alt="x" />
             </div> */}
             {locale === "en" && (
-              <div className="flex items-center h-full">
+              <div className="flex flex-col items-center h-full max-w-md">
                 <div>
                   <div className="text-2xl my-3.5">{t("email-subscription")}</div>
                   <div className="text-base">{t("email-subscription-desc")}</div>
                   <div className="text-base">{t("subscribtion-cancel")}</div>
                 </div>
+                <div className="flex lg:hidden mt-5">
+                  <Link href="/subscribe">
+                    <Button className="bg-white w-full lg:w-auto flex items-center" style={{background: "#f05622", color: "#fff", border: 'none'}}>{t('read-more')}<RightOutlined /></Button>
+                  </Link>
+                </div>
               </div>
             )}
-            {/* {locale === "en" && (
-              <Form onFinish={handleNewLetter}>
-              <div className="py-7 lg:flex gap-6">
-                <div>
-                  <div className="text-white">{t("name")}</div>
-                  <Form.Item name="name">
-                  <Input />
-                  </Form.Item>
-                </div>
-                <div>
-                  <div className="text-white">{t("email")}</div>
-                  <Form.Item name="email">
-                  <Input />
-                  </Form.Item>
-                </div>
-                <div>
-                  <div>&nbsp;</div>
-                  <Button
-                    className="bg-white w-full lg:w-auto"
-                    htmlType="submit"
-                    style={{ background: "#f05622", color: "#fff" }}
-                  >
-                    {t("subscribe")}
-                  </Button>
-                </div>
-              </div>
-              </Form>
-            )} */}
             {locale === "zh" && (
               <div className="py-1 lg:py-7 gap-6 lg:pl-10 h-full">
                 <div className="text-xl font-bold lg:text-2xl">扫码添加Robert教授微信</div>
@@ -171,7 +148,7 @@ const Hero = () => {
             )}
           </div>
           {
-            locale === 'en' && (<div className="flex items-center">
+            locale === 'en' && (<div className="items-center hidden lg:flex">
               <Link href="/subscribe">
                 <Button className="bg-white w-full lg:w-auto flex items-center" style={{background: "#f05622", color: "#fff", border: 'none'}}>{t('read-more')}<RightOutlined /></Button>
               </Link>
