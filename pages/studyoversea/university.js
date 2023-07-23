@@ -84,7 +84,7 @@ const University = () => {
       <Navbar />
       <div>
         <div>
-          <img src="/img/findmyuniversity.jpg" alt="university" />
+          <img src="/img/Find_my_university.jpg" alt="university" />
         </div>
         <div className="flex justify-center py-10">
           <div className="px-5 md:px-0 w-full md:w-3/5 ">

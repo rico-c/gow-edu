@@ -4,18 +4,18 @@ import {useTranslation} from "next-i18next";
 import {RightOutlined} from "@ant-design/icons";
 import {Button} from "antd";
 
-export const LessonItem = ({icon, title, desc, link}) => {
+export const LessonItem = ({icon, title, desc, link, isCol}) => {
   const {t} = useTranslation("common");
   return (
-    <div className="flex justify-center mt-10 w-ful">
-      <div className="flex shadow rounded-lg w-5/6 md:w-1/2 bg-white">
+    <div className="flex justify-center mt-10">
+      <div className={`flex shadow rounded-lg bg-white ${isCol ? 'flex-col w-5/6 md:w-80 items-center' : 'w-5/6 md:w-1/2'}`}>
         <div
-          style={{width: "410px"}}
-          className="hidden md:flex justify-center items-center p-10 border-r"
+          style={{width: isCol ? "200px" : "410px"}}
+          className={`hidden md:flex justify-center items-center ${isCol ? 'flex justify-center p-5' : 'p-10 border-r'}`}
         >
           <img width="130" src={icon} />
         </div>
-        <div className="p-10">
+        <div className={isCol ? "p-8" : "p-10"}>
           <div className="text-xl font-bold">{title}</div>
           <div>{desc}</div>
           <div className="pt-5">
@@ -40,7 +40,7 @@ const Lesson = () => {
         icon={"/img/Icon-Performance Coaching@2x.png"}
         title={t("lesson-title1")}
         desc={t("lesson-desc1")}
-        link="/"
+        link="/masterclass"
       />
       <LessonItem
         icon={"/img/Icon--Leader Prep.png"}

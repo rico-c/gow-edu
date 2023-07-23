@@ -4,7 +4,6 @@ import {RightOutlined} from "@ant-design/icons";
 import {useTranslation} from "next-i18next";
 import Link from "next/link";
 import {useRouter} from "next/router";
-import {fetchNewLetter} from '../api/new-letter'
 
 const labelStyle = {
   backgroundColor: "rgba(0, 0, 0, 0.4)",
@@ -16,16 +15,6 @@ const Hero = () => {
   const {t} = useTranslation("common");
   const router = useRouter();
   const locale = router.locale;
-
-
-  const handleNewLetter = async (data) => {
-    console.log(data);
-    const {name, email} = data;
-    const res = await fetchNewLetter({
-      first_name: name,
-      email_address: email
-    })
-  }
 
   return (
     <>

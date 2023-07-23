@@ -71,7 +71,7 @@ export default function Footer() {
       </div>
 
       <div className="py-5 text-sm md:flex justify-center border-t">
-        <div className="flex justify-center">© {t('web-right')} </div><div className="flex justify-center"> <a className="px-2 cursor-pointer">{t('terms-conditions')} </a> | <a className="px-2 cursor-pointer">{t('privacy-policy')}</a> | <a className="px-2 cursor-pointer">{t('contact-us')}</a></div>
+        <div className="flex justify-center">© {t('web-right')} </div><div className="flex justify-center"> <a className="px-2 cursor-pointer" href="/terms">{t('terms-conditions')} </a> | <a href="/privacy" className="px-2 cursor-pointer">{t('privacy-policy')}</a> | <a className="px-2 cursor-pointer">{t('contact-us')}</a></div>
       </div>
     </div>
   );
