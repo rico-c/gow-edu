@@ -21,7 +21,7 @@ const Subscribe = () => {
   };
 
   const handleNewLetter = async (data) => {
-    if(!isAgree) {
+    if (!isAgree) {
       messageApi.open({
         type: 'error',
         content: t('subscribe-error'),
@@ -30,7 +30,7 @@ const Subscribe = () => {
       return;
     }
     const {name, email} = data;
-    if(!name || !email) {
+    if (!name || !email) {
       messageApi.open({
         type: 'error',
         content: t('subscribe-param'),
@@ -92,10 +92,15 @@ const Subscribe = () => {
             </Form>
           </div>
           <div className="lg:border-l lg:ml-5 lg:pl-5">
-            <div className="flex gap-5 justify-center mb-10">
-              <div>Facebook</div>
-              <div>Google</div>
-              <div>Twitter</div>
+            <div className="flex gap-5 justify-center items-center mb-10">
+              <div className="cursor-pointer">
+                <img src="/logo/fb.png" width="50" />
+              </div>
+              <div className="cursor-pointer">
+                <img src="/logo/ins.png" width="50" />
+              </div>
+              <div className="cursor-pointer"><img src="/logo/twitter.png" width="50" /></div>
+              <div className="cursor-pointer"><img src="/logo/tt.png" width="50" /></div>
             </div>
             <div className="py-5">
               <div className="text-xl font-bold">{t('subscribe-wechat')}</div>
