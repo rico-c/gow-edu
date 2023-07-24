@@ -28,21 +28,21 @@ const Terms = () => {
 
             <ol>
 
-              <li>
+              <li className="pb-5">
                 <strong>Privacy</strong>
-                <p>Your privacy is very important to us so please read our <a href="/Home/Privacy">Privacy Policy</a>.</p>
+                <p className="pb-5">Your privacy is very important to us so please read our <a href="/Home/Privacy">Privacy Policy</a>.</p>
               </li>
 
 
-              <li>
+              <li className="pb-5">
                 <strong>Sharing Your Content and Information</strong>
 
-                <p>You own all of the content and information you post on BHS, and you can control how it is
+                <p className="pb-5">You own all of the content and information you post on BHS, and you can control how it is
                   shared through your Dashboard Settings. In addition: </p>
 
                 <ol>
 
-                  <li>
+                  <li className="pb-5">
                     For content that is covered by intellectual property rights, like photos and videos
                     (IP content), you specifically give us a non-exclusive, transferable,
                     sub-licensable, royalty-free, worldwide license to use any IP content that you post
@@ -51,12 +51,12 @@ const Terms = () => {
                     deleted it.
                   </li>
 
-                  <li>
+                  <li className="pb-5">
                     When you delete IP content, you understand that removed content may persist in
                     backup copies for a reasonable period of time (but will not be available to others).
                   </li>
 
-                  <li>
+                  <li className="pb-5">
                     When you publish content or information using the Public setting, it means that you
                     are allowing everyone, to access and use that information, and to associate it with
                     you (ie. your name and profile picture).
@@ -67,50 +67,50 @@ const Terms = () => {
               </li>
 
 
-              <li>
+              <li className="pb-5">
                 <strong>Safety</strong>
 
-                <p>You agree that: </p>
+                <p className="pb-5">You agree that: </p>
 
                 <ol>
 
-                  <li>
+                  <li className="pb-5">
                     You will not post unauthorised commercial communications (such as spam) on the BHS
                     network.
                   </li>
-                  <li>
+                  <li className="pb-5">
                     You will not collect users' content or information, or otherwise access the BHS
                     network, using automated means (such as harvesting bots, robots, spiders, or
                     scrapers) without our prior permission.
                   </li>
-                  <li>
+                  <li className="pb-5">
                     You will not engage in unlawful multi-level marketing, such as a pyramid scheme, on
                     the BHS network.
                   </li>
-                  <li>
+                  <li className="pb-5">
                     You will not upload viruses or other malicious code.
                   </li>
-                  <li>
+                  <li className="pb-5">
                     You will not solicit login information or access an account belonging to someone
                     else.
                   </li>
-                  <li>
+                  <li className="pb-5">
                     You will not bully, intimidate, or harass any user.
                   </li>
-                  <li>
+                  <li className="pb-5">
                     You will not post content that: is hate speech, threatening, or pornographic;
                     incites violence; or contains nudity or graphic or gratuitous violence.
                   </li>
-                  <li>
+                  <li className="pb-5">
                     You will not use the BHS network to do anything unlawful, misleading, malicious, or
                     discriminatory.
                   </li>
-                  <li>
+                  <li className="pb-5">
                     You will not do anything that could disable, overburden, or impair the proper
                     working or appearance of the BHS network, such as a denial of service attack or
                     interference with page rendering or other BHS functionality.
                   </li>
-                  <li>
+                  <li className="pb-5">
                     You will not facilitate or encourage any violations of these Terms and Conditions or
                     our policies.
                   </li>
@@ -119,35 +119,35 @@ const Terms = () => {
 
               </li>
 
-              <li>
+              <li className="pb-5">
                 <strong>Registration and Account Security</strong>
 
-                <p>You agree that: </p>
+                <p className="pb-5">You agree that: </p>
 
                 <ol>
 
-                  <li>
+                  <li className="pb-5">
                     You will not provide any false personal information on the BHS network, or create an
                     account for anyone other than yourself without permission.
                   </li>
 
-                  <li>
+                  <li className="pb-5">
                     If we disable your account, you will not create another one without our permission.
                   </li>
 
-                  <li>
+                  <li className="pb-5">
                     You will not use the BHS network if you are under 13.
                   </li>
 
-                  <li>
+                  <li className="pb-5">
                     You will not use the BHS network if you are a convicted sex offender.
                   </li>
 
-                  <li>
+                  <li className="pb-5">
                     You will keep your contact information accurate and up-to-date.
                   </li>
 
-                  <li>
+                  <li className="pb-5">
                     You will not share your password let anyone else access your account, or do anything
                     else that might jeopardize the security of your account.
                   </li>
@@ -155,38 +155,38 @@ const Terms = () => {
                 </ol>
               </li>
 
-              <li>
+              <li className="pb-5">
                 <strong>Protecting Other People's Rights</strong>
 
-                <p>You agree that: </p>
+                <p className="pb-5">You agree that: </p>
 
                 <ol>
-                  <li>
+                  <li className="pb-5">
                     You will not post content or take any action on the BHS network that infringes or
                     violates someone else's rights or otherwise violates the law.
                   </li>
-                  <li>
+                  <li className="pb-5">
                     We can remove any content or information you post on the BHS network if we believe
                     that it violates this Statement or our policies.
                   </li>
-                  <li>
+                  <li className="pb-5">
                     If we remove your content for infringing someone else's copyright, and you believe
                     we removed it by mistake, we will provide you with an opportunity to appeal.
                   </li>
-                  <li>
+                  <li className="pb-5">
                     If you repeatedly infringe other people's intellectual property rights, we will
                     disable your account when appropriate.
                   </li>
-                  <li>
+                  <li className="pb-5">
                     You will not use our copyrights or Trademarks or any confusingly similar marks,
                     without our prior written permission.
                   </li>
-                  <li>
+                  <li className="pb-5">
                     If you collect information from users, you will: obtain their consent, make it clear
                     you (and not BHS) are the one collecting their information, and post a privacy
                     policy explaining what information you collect and how you will use it.
                   </li>
-                  <li>
+                  <li className="pb-5">
                     You will not post anyone's identification documents or sensitive financial
                     information on the BHS network.
                   </li>
@@ -194,10 +194,10 @@ const Terms = () => {
 
               </li>
 
-              <li>
+              <li className="pb-5">
                 <strong>Payments &amp; Delivery</strong>
 
-                <p>
+                <p className="pb-5">
                   You must be 18 years old or older to purchase products or services developed by BHS. If
                   you are under 18 years old you must do so only with the involvement of your parent or
                   guardian. If you purchase products or services developed by BHS, you will be given
@@ -213,7 +213,7 @@ const Terms = () => {
                   be sent to your nominated e-mail address.
                 </p>
 
-                <p>
+                <p className="pb-5">
                   <u>If you purchase products or services via our marketing affiliates</u>, you
                   acknowledge that the products or services you may purchase are sold by merchants, not by
                   BHS. WE MAKE NO WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, WITH RESPECT TO ANY PRODUCTS
@@ -227,9 +227,9 @@ const Terms = () => {
 
               </li>
 
-              <li>
+              <li className="pb-5">
                 <strong>Discontinuity of Delivery</strong>
-                <p>
+                <p className="pb-5">
                   All material generated by BHS is sent to you in an electronic form. In providing you
                   with free content such as newsletters, we advise that this service may be terminated at
                   any time, with or without notice. Given this is a free service, BHS will not be liable
@@ -241,9 +241,9 @@ const Terms = () => {
                 </p>
               </li>
 
-              <li>
+              <li className="pb-5">
                 <strong>Refunds</strong>
-                <p>
+                <p className="pb-5">
                   <strong>For on-line services provided by BHS (including on-line programs and other
                     on-line resources)</strong>. There is no refund of payment for any on-line service
                   provided by BHS. The only exception to this is where you can prove that the on-line
@@ -253,7 +253,7 @@ const Terms = () => {
                   BHS, then a full refund will be made to your nominated credit card.
                 </p>
 
-                <p>
+                <p className="pb-5">
                   <strong>For physical products supplied by BHS</strong>. If the product supplied by BHS
                   is faulty or damaged, within the first 14 days after purchasing the item from BHS, you
                   must contact BHS by e-mailing us on returns@brighthappyschools.com and obtain a RETURNS
@@ -265,7 +265,7 @@ const Terms = () => {
                   processed.
                 </p>
 
-                <p>
+                <p className="pb-5">
                   <strong>For physical products or on-line services supplied by one of our marketing
                     affiliates</strong>. <u>If you purchase products or services via one or more of our
                       marketing affiliates</u>, you acknowledge that the products or services you may
@@ -281,7 +281,7 @@ const Terms = () => {
               </li>
             </ol>
 
-            <p>Version date: May 27th, 2016</p>
+            <p className="pb-5">Version date: May 27th, 2016</p>
 
           </div>
         </div>

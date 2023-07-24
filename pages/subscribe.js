@@ -4,6 +4,7 @@ import Navbar from "../components/navbar";
 import {useTranslation} from "next-i18next";
 import {Form, Input, Button, Checkbox, message} from 'antd'
 import {fetchNewLetter} from '../api/new-letter'
+import {useState} from 'react'
 
 import {serverSideTranslations} from "next-i18next/serverSideTranslations";
 import Link from "next/link";
@@ -13,14 +14,34 @@ const Subscribe = () => {
 
   const [messageApi, contextHolder] = message.useMessage();
 
+  const [isAgree, setAgree] = useState(true)
+
+  const onChange = (e) => {
+    setAgree(e.target.checked)
+  };
+
   const handleNewLetter = async (data) => {
-    console.log(data);
+    if(!isAgree) {
+      messageApi.open({
+        type: 'error',
+        content: t('subscribe-error'),
+      });
+
+      return;
+    }
     const {name, email} = data;
+    if(!name || !email) {
+      messageApi.open({
+        type: 'error',
+        content: t('subscribe-param'),
+      });
+
+      return;
+    }
     const res = await fetchNewLetter({
       first_name: name,
       email_address: email
     })
-    console.log(111, res);
     if (res.data === 'success') {
       messageApi.open({
         type: 'success',
@@ -42,7 +63,7 @@ const Subscribe = () => {
       <div className="flex justify-center py-5 lg:py-20">
         <div className="w-1/2 flex">
           <div className="w-1/2">
-            <div dangerouslySetInnerHTML={{__html: t('subscribe-slogan')}}></div>
+            <div className="font-bold" dangerouslySetInnerHTML={{__html: t('subscribe-slogan')}}></div>
             <Form onFinish={handleNewLetter}>
               <div className="py-7 gap-6">
                 <div>
@@ -58,7 +79,7 @@ const Subscribe = () => {
                   </Form.Item>
                 </div>
                 <div className="pb-5">
-                  <Checkbox className="pr-2" />I agree to the <Link href="/terms" className="underline">terms and conditions.</Link>
+                  <Checkbox checked={isAgree} onChange={onChange} className="pr-2" />I agree to the <Link href="/terms" className="underline">terms and conditions.</Link>
                 </div>
                 <Button
                   className="bg-white w-full lg:w-auto"
@@ -71,9 +92,15 @@ const Subscribe = () => {
             </Form>
           </div>
           <div className="border-l ml-5 pl-5">
-            <div>Facebook</div>
-            <div>Google</div>
-            <div>Twitter</div>
+            <div className="flex gap-5 justify-center mb-10">
+              <div>Facebook</div>
+              <div>Google</div>
+              <div>Twitter</div>
+            </div>
+            <div className="py-5">
+              <div className="text-xl font-bold">{t('subscribe-wechat')}</div>
+              <div className="flex justify-center"><img className="w-48" src={"/qr/wechat.jpeg"} /></div>
+            </div>
           </div>
         </div>
       </div>
