@@ -61,10 +61,10 @@ const Subscribe = () => {
       <Navbar />
       {contextHolder}
       <div className="flex justify-center py-5 lg:py-20">
-        <div className="w-1/2 flex">
-          <div className="w-1/2">
-            <div className="font-bold" dangerouslySetInnerHTML={{__html: t('subscribe-slogan')}}></div>
-            <Form onFinish={handleNewLetter}>
+        <div className="w-5/6 lg:w-1/2 lg:flex">
+          <div className="w-full lg:w-1/2">
+            <div className="font-bold text-center lg:text-left" dangerouslySetInnerHTML={{__html: t('subscribe-slogan')}}></div>
+            <Form className="text-center lg:text-left" onFinish={handleNewLetter}>
               <div className="py-7 gap-6">
                 <div>
                   <div>{t("name")}</div>
@@ -91,7 +91,7 @@ const Subscribe = () => {
               </div>
             </Form>
           </div>
-          <div className="border-l ml-5 pl-5">
+          <div className="lg:border-l lg:ml-5 lg:pl-5">
             <div className="flex gap-5 justify-center mb-10">
               <div>Facebook</div>
               <div>Google</div>
