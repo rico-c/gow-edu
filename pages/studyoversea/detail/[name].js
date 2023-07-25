@@ -40,9 +40,9 @@ const Detail = ({name}) => {
       <Navbar />
       {data && (
         <div>
-          <div>
+          {/* <div>
             <img src="/img/b3.png" />
-          </div>
+          </div> */}
           <div className="flex justify-center pt-10">
             <div className="w-full md:w-1/2 px-4">
               <div className="text-2xl font-bold main-color">
@@ -82,7 +82,7 @@ const Detail = ({name}) => {
               </div>
               <div className="text-3xl fotn-bold pt-5 main-color">{t('overview')}</div>
               <div className="info-graph pt-5 leading-7" dangerouslySetInnerHTML={{__html: data.school_info}}></div>
-              <div className="flex gap-5">
+              <div className="flex gap-5 mb-10">
                 <div className="w-1/2"><img width="w-full" src={data.city_image_url} /></div>
                 <div className="w-1/2"><div className="text-3xl fotn-bold pt-5 main-color">{t('location')}</div>
                   <div className="info-graph pt-5 leading-7" dangerouslySetInnerHTML={{__html: data.city_info}}></div></div>
