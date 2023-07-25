@@ -2,7 +2,7 @@ import Footer from "../../components/footer";
 import Head from "next/head";
 import Navbar from "../../components/navbar";
 import {useTranslation} from "next-i18next";
-import Link from "next/link";
+import {HeadingSection } from '../../components/headingSection'
 
 import {serverSideTranslations} from "next-i18next/serverSideTranslations";
 
@@ -21,6 +21,9 @@ const Advise = () => {
       <div>
         <div>
           <img src="/img/course_advice.jpg" alt="university" />
+        </div>
+        <div className="flex justify-center">
+          <HeadingSection img={'/img/Icon-Turnitin Feedback.png'} header={t('course-advise')} desc={t('course-advise-desc')} />
         </div>
         <div className="flex justify-center py-10">
           wip

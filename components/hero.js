@@ -82,7 +82,7 @@ const Hero = () => {
             </Button>
             <Button type="link" className="flex">
               <Link
-                href="/university"
+                href="/studyoversea/university"
                 className="sm:text-sm lg:text-xl flex items-center gap-2 font-bold"
                 style={{color: "#f05622"}}
               >

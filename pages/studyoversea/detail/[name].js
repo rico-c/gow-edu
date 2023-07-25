@@ -44,7 +44,7 @@ const Detail = ({name}) => {
             <img src="/img/b3.png" />
           </div>
           <div className="flex justify-center pt-10">
-            <div className="w-full md:w-1/2">
+            <div className="w-full md:w-1/2 px-4">
               <div className="text-2xl font-bold main-color">
                 {data.school_name}
               </div>
@@ -76,13 +76,17 @@ const Detail = ({name}) => {
                     </div>
                   </div>
                 </div>
+                <div className="hidden md:block">
+                  <img src={data.school_image_url} />
+                </div>
               </div>
-              <div className="text-3xl fotn-bold pt-5">{t('overview')}</div>
+              <div className="text-3xl fotn-bold pt-5 main-color">{t('overview')}</div>
               <div className="info-graph pt-5 leading-7" dangerouslySetInnerHTML={{__html: data.school_info}}></div>
-              <div className="border p-2"><img width="100%" src={data.school_image_url} /></div>
-              <div className="text-3xl fotn-bold pt-5">{t('location')}</div>
-              <div className="info-graph pt-5 leading-7" dangerouslySetInnerHTML={{__html: data.city_info}}></div>
-              <div className="border p-2 mb-5"><img width="100%" src={data.city_image_url} /></div>
+              <div className="flex gap-5">
+                <div className="w-1/2"><img width="w-full" src={data.city_image_url} /></div>
+                <div className="w-1/2"><div className="text-3xl fotn-bold pt-5 main-color">{t('location')}</div>
+                  <div className="info-graph pt-5 leading-7" dangerouslySetInnerHTML={{__html: data.city_info}}></div></div>
+              </div>
             </div>
           </div>
         </div>

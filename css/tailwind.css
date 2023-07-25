@@ -25,3 +25,6 @@
 .info-graph p {
   margin-bottom: 20px;
 }
+.slick-slide {
+  transition: opacity 1000ms ease 0s, visibility 1000ms ease 0s !important;
+}

@@ -5,7 +5,7 @@ import {LessonItem} from "../../components/lesson";
 import {useTranslation} from "next-i18next";
 
 import {serverSideTranslations} from "next-i18next/serverSideTranslations";
-import University from './university';
+import {HeadingSection} from "../../components/headingSection";
 
 const StudyOversea = () => {
   const {t} = useTranslation("common");
@@ -20,6 +20,9 @@ const StudyOversea = () => {
       <div className="pb-5">
         <div>
           <img src={'/img/Study_overseas.jpg'} />
+        </div>
+        <div className="flex justify-center">
+          <HeadingSection img={'/img/Icon--Leader Prep.png'} header={t('oversea')} desc={t('oversea-desc')} />
         </div>
         <div>
           <LessonItem
